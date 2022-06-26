@@ -1,0 +1,26 @@
+html {
+  background-color: #303030;
+}
+
+.hide-menu-item-list {
+  display: none;
+}
+
+.menu-item-list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  .hide-menu-item-list {
+    display: flex;
+  }
+
+  .menu-item-list {
+    flex-direction: row;
+  }
+
+  .menu-icon {
+    display: none !important;
+  }
+}
