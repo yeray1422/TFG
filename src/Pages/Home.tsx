@@ -1,19 +1,18 @@
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Stack,
-  MenuItem,
-  IconButton,
-} from "@mui/material";
+import { AppBar, Toolbar, Typography, Stack, MenuItem, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Search } from "@mui/icons-material";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleOpenMenu: () => void = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSearchIconClick: () => void = () => {
+    // TODO: Add functionality
+    console.log("Search button click");
   };
 
   return (
@@ -24,6 +23,9 @@ const Home = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Zombies Easter Eggs
             </Typography>
+            <IconButton onClick={handleSearchIconClick} className="search-icon">
+              <Search />
+            </IconButton>
             <IconButton onClick={handleOpenMenu} className="menu-icon">
               <MenuIcon />
             </IconButton>
