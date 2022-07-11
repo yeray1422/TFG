@@ -2,6 +2,7 @@ html {
   background-color: #303030;
 }
 
+/************ HomeNavBar Styles ************/
 .hide-menu-item-list {
   display: none;
 }
@@ -24,3 +25,4 @@ html {
     display: none !important;
   }
 }
+/************ End HomeNavBar Styles ************/
