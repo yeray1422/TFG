@@ -3,21 +3,27 @@ html {
 }
 
 /************ HomeNavBar Styles ************/
-.hide-menu-item-list {
-  display: none;
-}
-
 .menu-item-list {
+  position: absolute;
+  background-color: #272727;
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.hide-menu-item-list {
+  top: -100%;
+  transition: .5s;
+}
+
+.show-menu-item-list {
+  top: 56px;
+  transition: .5s;
 }
 
 @media screen and (min-width: 600px) {
-  .hide-menu-item-list {
-    display: flex;
-  }
-
   .menu-item-list {
+    top: 64px;
     flex-direction: row;
   }
 

@@ -36,7 +36,7 @@ const HomeNavBar = () => {
             <MenuIcon />
           </IconButton>
         </Toolbar>
-        <div className={isMenuOpen ? "menu-item-list" : "hide-menu-item-list"}>
+        <div className={isMenuOpen ? "show-menu-item-list menu-item-list" : "hide-menu-item-list menu-item-list"}>
           <MenuItem>Black Ops I</MenuItem> {/* onClick */}
           <MenuItem>Black Ops II</MenuItem> {/* onClick */}
           <MenuItem>Black Ops III</MenuItem> {/* onClick */}
