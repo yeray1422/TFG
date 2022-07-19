@@ -4,6 +4,7 @@ import { Stack } from "@mui/material";
 import axios from "axios";
 import constants from "../Utils/Constants";
 import PageLogos from "../Models/PageLogos";
+import HomeItem from "../Components/HomeItem";
 
 const pageLogoInitialState: PageLogos = {
   id: 0,
@@ -32,12 +33,13 @@ const Home = () => {
   return (
     <>
       <HomeNavBar />
-      <Stack justifyContent="center" alignItems="center">
+      <Stack justifyContent="center" alignItems="center" className="paper">
         <img src={pageLogo.logo} alt="" className="home-logo" />
         <div className="home-subtitle">
           <p>{pageLogo.description}</p>
         </div>
       </Stack>
+      <HomeItem />
     </>
   );
 };

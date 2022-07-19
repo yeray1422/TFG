@@ -17,20 +17,24 @@ html {
 }
 
 .show-menu-item-list {
-  top: 56px;
+  top: 55px;
   transition: .5s;
 }
 /************ End HomeNavBar Styles ************/
 
 /************ Home Styles ************/
+.paper {
+  background-color: #454545;
+}
+
 .home-logo {
   width: 280px;
   height: auto;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .home-subtitle {
-  width: 99.5%;
+  width: 95%;
   padding: 5px;
   margin-top: -41px;
   background-color: #202020;
@@ -76,6 +80,11 @@ html {
 }
 
 @media screen and (min-width: 840px) {
+  /************ Home Styles ************/
+  .home-logo {
+    margin-top: 100px;
+  }
+  /************ End Home Styles ************/
 }
 
 @media screen and (min-width: 1440px) {
