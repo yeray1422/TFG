@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import HomeNavBar from "../Components/HomeNavBar";
-// import HomeLogo from "../Assets/images/home-page/zombies-logo.png";
 import { Stack } from "@mui/material";
 import axios from "axios";
 import constants from "../Utils/Constants";

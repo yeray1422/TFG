@@ -20,17 +20,6 @@ html {
   top: 56px;
   transition: .5s;
 }
-
-@media screen and (min-width: 600px) {
-  .menu-item-list {
-    top: 64px;
-    flex-direction: row;
-  }
-
-  .menu-icon {
-    display: none !important;
-  }
-}
 /************ End HomeNavBar Styles ************/
 
 /************ Home Styles ************/
@@ -41,6 +30,8 @@ html {
 }
 
 .home-subtitle {
+  width: 99.5%;
+  padding: 5px;
   margin-top: -41px;
   background-color: #202020;
 }
@@ -53,3 +44,54 @@ html {
   color: #fff;
 }
 /************ End Home Styles ************/
+
+/************ Breackpoints ************/
+@media screen and (min-width: 600px) {
+  /************ HomeNavBar Styles ************/
+  .menu-item-list {
+    top: 63px;
+    flex-direction: row;
+  }
+
+  .menu-icon {
+    display: none !important;
+  }
+  /************ End HomeNavBar Styles ************/
+
+  /************ Home Styles ************/
+  .home-logo {
+    width: 480px;
+  }
+
+  .home-subtitle {
+    margin-top: -70px;
+  }
+
+  .home-subtitle p {
+    font-size: 1.3rem;
+    width: 480px;
+    margin: auto;
+  }
+  /************ End Home Styles ************/
+}
+
+@media screen and (min-width: 840px) {
+}
+
+@media screen and (min-width: 1440px) {
+  /************ Home Styles ************/
+  .home-logo {
+    width: 860px;
+  }
+
+  .home-subtitle {
+    margin-top: -129px;
+  }
+
+  .home-subtitle p {
+    font-size: 1.3rem;
+    width: 580px;
+  }
+  /************ End Home Styles ************/
+}
+/************ End Breackpoints ************/

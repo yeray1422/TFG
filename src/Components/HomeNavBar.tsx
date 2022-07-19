@@ -27,7 +27,7 @@ const HomeNavBar = () => {
       <Stack>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Zombies Easter Eggs
+            <span className="toolbar-title">Zombies Easter Eggs</span>
           </Typography>
           <IconButton onClick={handleSearchIconClick} className="search-icon">
             <Search />
@@ -37,11 +37,11 @@ const HomeNavBar = () => {
           </IconButton>
         </Toolbar>
         <div className={isMenuOpen ? "show-menu-item-list menu-item-list" : "hide-menu-item-list menu-item-list"}>
-          <MenuItem>Black Ops I</MenuItem> {/* onClick */}
-          <MenuItem>Black Ops II</MenuItem> {/* onClick */}
-          <MenuItem>Black Ops III</MenuItem> {/* onClick */}
-          <MenuItem>Black Ops IV</MenuItem> {/* onClick */}
-          <MenuItem>Cold War</MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item">Black Ops I</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item">Black Ops II</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item">Black Ops III</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item">Black Ops IV</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item">Cold War</span></MenuItem> {/* onClick */}
         </div>
       </Stack>
     </AppBar>
