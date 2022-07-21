@@ -37,10 +37,10 @@ const HomeNavBar = () => {
           </IconButton>
         </Toolbar>
         <div className={isMenuOpen ? "show-menu-item-list menu-item-list" : "hide-menu-item-list menu-item-list"}>
-          <MenuItem><span className="menu-item">Black Ops I</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item">Black Ops</span></MenuItem> {/* onClick */}
           <MenuItem><span className="menu-item">Black Ops II</span></MenuItem> {/* onClick */}
           <MenuItem><span className="menu-item">Black Ops III</span></MenuItem> {/* onClick */}
-          <MenuItem><span className="menu-item">Black Ops IV</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item">Black Ops 4</span></MenuItem> {/* onClick */}
           <MenuItem><span className="menu-item">Cold War</span></MenuItem> {/* onClick */}
         </div>
       </Stack>

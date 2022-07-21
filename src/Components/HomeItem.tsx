@@ -6,26 +6,28 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import PageLogos from "../Models/PageLogos";
 
-const HomeItem = () => {
+interface PageLogosProps {
+  pageLogo: PageLogos;
+}
+
+const HomeItem = (props: PageLogosProps) => {
   return (
-    <Card>
+    <Card className="home-item">
       <CardActionArea onClick={() => console.log("CardActionArea")}>
         <CardMedia
           component="img"
           height="140"
-          image="https://picsum.photos/200/300"
+          image={props.pageLogo.logo}
           alt="prueba"
         />
-        <CardContent>
+        <CardContent className="home-item-content">
           <Typography gutterBottom variant="h5" component="div">
-            Titulo
+            {props.pageLogo.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
-            nemo eveniet molestiae architecto. Dignissimos iusto rerum eligendi
-            dolore commodi deserunt accusamus! Itaque reiciendis quae harum
-            animi tenetur repellat necessitatibus sequi?
+            {props.pageLogo.description}
           </Typography>
         </CardContent>
       </CardActionArea>
