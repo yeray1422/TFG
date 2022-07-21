@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PageLogos from "../Models/PageLogos";
 
 interface PageLogosProps {
@@ -13,9 +14,15 @@ interface PageLogosProps {
 }
 
 const HomeItem = (props: PageLogosProps) => {
+  const navigate = useNavigate();
+
+  const handleHomeItemClick: () => void = () => {
+    navigate(props.pageLogo.page);
+  };
+
   return (
     <Card className="home-item">
-      <CardActionArea onClick={() => console.log("CardActionArea")}>
+      <CardActionArea onClick={handleHomeItemClick}>
         <CardMedia
           component="img"
           height="140"

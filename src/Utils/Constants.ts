@@ -10,6 +10,12 @@ const constants = {
     logo: "",
     description: "",
   },
+  BLACK_OPS_PAGE: "black-ops",
+  BLACK_OPS_II_PAGE: "black-ops-2",
+  BLACK_OPS_III_PAGE: "black-ops-3",
+  BLACK_OPS_4_PAGE: "black-ops-4",
+  BLACK_OPS_COLD_WAR_PAGE: "cold-war",
+  VANGUARD_PAGE: "vanguard",
 };
 
 export default constants;
