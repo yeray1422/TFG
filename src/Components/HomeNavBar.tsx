@@ -9,9 +9,12 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import constants from "../Utils/Constants";
 
 const HomeNavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleOpenMenu: () => void = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -37,11 +40,12 @@ const HomeNavBar = () => {
           </IconButton>
         </Toolbar>
         <div className={isMenuOpen ? "show-menu-item-list menu-item-list" : "hide-menu-item-list menu-item-list"}>
-          <MenuItem><span className="menu-item">Black Ops</span></MenuItem> {/* onClick */}
-          <MenuItem><span className="menu-item">Black Ops II</span></MenuItem> {/* onClick */}
-          <MenuItem><span className="menu-item">Black Ops III</span></MenuItem> {/* onClick */}
-          <MenuItem><span className="menu-item">Black Ops 4</span></MenuItem> {/* onClick */}
-          <MenuItem><span className="menu-item">Cold War</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item" onClick={() => navigate(constants.BLACK_OPS_PAGE)}>Black Ops</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item" onClick={() => navigate(constants.BLACK_OPS_II_PAGE)}>Black Ops II</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item" onClick={() => navigate(constants.BLACK_OPS_III_PAGE)}>Black Ops III</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item" onClick={() => navigate(constants.BLACK_OPS_4_PAGE)}>Black Ops 4</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item" onClick={() => navigate(constants.BLACK_OPS_COLD_WAR_PAGE)}>Cold War</span></MenuItem> {/* onClick */}
+          <MenuItem><span className="menu-item" onClick={() => navigate(constants.VANGUARD_PAGE)}>Vanguard</span></MenuItem> {/* onClick */}
         </div>
       </Stack>
     </AppBar>

@@ -69,13 +69,8 @@ html {
 /************ Breackpoints ************/
 @media screen and (min-width: 600px) {
   /************ HomeNavBar Styles ************/
-  .menu-item-list {
+  .show-menu-item-list {
     top: 63px;
-    flex-direction: row;
-  }
-
-  .menu-icon {
-    display: none !important;
   }
   /************ End HomeNavBar Styles ************/
 
@@ -97,6 +92,17 @@ html {
 }
 
 @media screen and (min-width: 840px) {
+  /************ HomeNavBar Styles ************/
+  .menu-item-list {
+    top: 63px;
+    flex-direction: row;
+  }
+
+  .menu-icon {
+    display: none !important;
+  }
+  /************ End HomeNavBar Styles ************/
+
   /************ Home Styles ************/
   .home-logo {
     margin-top: 100px;
