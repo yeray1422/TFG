@@ -14,21 +14,21 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get(`${constants.BASE_URL}logo-page`, {
+      .get(`${constants.BASE_URL}logos`, {
         params: {
-          page: "home",
+          page: "eq.home",
         },
         headers: {
           apikey: constants.APIKEY,
         },
       })
-      .then((res) => setPageLogo(res.data))
+      .then((res) => setPageLogo(res.data[0]))
       .catch(console.log);
 
     axios
-      .get(`${constants.BASE_URL}logos-without-page`, {
+      .get(`${constants.BASE_URL}logos`, {
         params: {
-          page: "home",
+          page: "not.eq.home",
         },
         headers: {
           apikey: constants.APIKEY,
