@@ -15,7 +15,6 @@ const constants = {
   BLACK_OPS_III_PAGE: "black-ops-3",
   BLACK_OPS_4_PAGE: "black-ops-4",
   BLACK_OPS_COLD_WAR_PAGE: "cold-war",
-  VANGUARD_PAGE: "vanguard",
 };
 
 export default constants;

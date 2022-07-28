@@ -5,12 +5,13 @@ import axios from "axios";
 import constants from "../Utils/Constants";
 import PageLogos from "../Models/PageLogos";
 import HomeItem from "../Components/HomeItem";
+import HomeCards from "../Models/HomeCards";
 
 const pageLogoInitialState: PageLogos = constants.PAGE_LOGOS_INITIAL_STATE;
 
 const Home = () => {
   const [pageLogo, setPageLogo] = useState(pageLogoInitialState);
-  const [pageLogosArray, setPageLogosArray] = useState<Array<PageLogos>>([]);
+  const [homeCardsArray, setHomeCardsArray] = useState<Array<HomeCards>>([]);
 
   useEffect(() => {
     axios
@@ -26,15 +27,12 @@ const Home = () => {
       .catch(console.log);
 
     axios
-      .get(`${constants.BASE_URL}logos`, {
-        params: {
-          page: "not.eq.home",
-        },
+      .get(`${constants.BASE_URL}home-cards`, {
         headers: {
           apikey: constants.APIKEY,
         },
       })
-      .then((res) => setPageLogosArray(res.data))
+      .then((res) => setHomeCardsArray(res.data))
       .catch(console.log);
   }, []);
 
@@ -48,7 +46,7 @@ const Home = () => {
         </div>
       </Stack>
       <Grid container columnSpacing={1} rowSpacing={2} columns={{ xs: 3, sm: 6, md: 9 }} className="home-item-list">
-        {pageLogosArray.map((pageLogo, index) => (
+        {homeCardsArray.map((pageLogo, index) => (
           <Grid item key={index} xs={3}>
             <HomeItem pageLogo={pageLogo} />
           </Grid>

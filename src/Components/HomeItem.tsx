@@ -7,13 +7,13 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import PageLogos from "../Models/PageLogos";
+import HomeCards from "../Models/HomeCards";
 
-interface PageLogosProps {
-  pageLogo: PageLogos;
+interface HomeCardsProps {
+  pageLogo: HomeCards;
 }
 
-const HomeItem = (props: PageLogosProps) => {
+const HomeItem = (props: HomeCardsProps) => {
   const navigate = useNavigate();
 
   const handleHomeItemClick: () => void = () => {
@@ -26,7 +26,7 @@ const HomeItem = (props: PageLogosProps) => {
         <CardMedia
           component="img"
           height="140"
-          image={props.pageLogo.logo}
+          image={props.pageLogo.image}
           alt="prueba"
         />
         <CardContent className="home-item-content">
