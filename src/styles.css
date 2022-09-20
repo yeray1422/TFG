@@ -2,7 +2,7 @@ html {
   background-color: #303030;
 }
 
-/************ HomeNavBar Styles ************/
+/************ NavBar Styles ************/
 .menu-item-list {
   position: absolute;
   background-color: #272727;
@@ -20,27 +20,31 @@ html {
   top: 55px;
   transition: .5s;
 }
+
+.toolbar-title:hover {
+  cursor: pointer;
+}
 /************ End HomeNavBar Styles ************/
 
-/************ Home Styles ************/
+/************ Logos Styles ************/
 .paper {
   background-color: #454545;
 }
 
-.home-logo {
+.pages-logo {
   width: 280px;
   height: auto;
   margin-top: 50px;
 }
 
-.home-subtitle {
+.pages-subtitle {
   width: 95%;
   padding: 5px;
   margin-top: -41px;
   background-color: #202020;
 }
 
-.home-subtitle p {
+.pages-subtitle p {
   margin: 0 50px;
   padding: 10px 0;
   font-size: 1rem;
@@ -48,11 +52,11 @@ html {
   color: #fff;
 }
 
-.home-item-list {
+.pages-item-list {
   margin-top: 34px !important;
   margin-bottom: 34px;
 }
-/************ End Home Styles ************/
+/************ End Logos Styles ************/
 
 /************ HomeItem Styles ************/
 .home-item {
