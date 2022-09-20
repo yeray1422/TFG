@@ -5,14 +5,14 @@ import axios from "axios";
 import constants from "../Utils/Constants";
 import PageLogos from "../Models/PageLogos";
 import HomeItem from "../Components/HomeItem";
-import HomeCards from "../Models/HomeCards";
+import Cards from "../Models/Cards";
 import News from "../Components/News";
 
 const pageLogoInitialState: PageLogos = constants.PAGE_LOGOS_INITIAL_STATE;
 
 const Home = () => {
   const [pageLogo, setPageLogo] = useState(pageLogoInitialState);
-  const [homeCardsArray, setHomeCardsArray] = useState<Array<HomeCards>>([]);
+  const [homeCardsArray, setHomeCardsArray] = useState<Array<Cards>>([]);
 
   useEffect(() => {
     axios

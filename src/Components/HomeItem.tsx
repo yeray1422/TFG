@@ -7,10 +7,10 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import HomeCards from "../Models/HomeCards";
+import Cards from "../Models/Cards";
 
 interface HomeCardsProps {
-  pageLogo: HomeCards;
+  pageLogo: Cards;
 }
 
 const HomeItem = (props: HomeCardsProps) => {

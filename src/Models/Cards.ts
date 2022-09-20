@@ -1,4 +1,4 @@
-class HomeCards {
+class Cards {
   id: number;
   title: string;
   image: string;
@@ -14,4 +14,4 @@ class HomeCards {
   }
 }
 
-export default HomeCards;
+export default Cards;

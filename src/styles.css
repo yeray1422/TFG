@@ -78,21 +78,21 @@ html {
   }
   /************ End HomeNavBar Styles ************/
 
-  /************ Home Styles ************/
-  .home-logo {
+  /************ Logos Styles ************/
+  .pages-logo {
     width: 480px;
   }
 
-  .home-subtitle {
+  .pages-subtitle {
     margin-top: -70px;
   }
 
-  .home-subtitle p {
+  .pages-subtitle p {
     font-size: 1.3rem;
     width: 480px;
     margin: auto;
   }
-  /************ End Home Styles ************/
+  /************ End Logos Styles ************/
 }
 
 @media screen and (min-width: 840px) {
@@ -107,27 +107,27 @@ html {
   }
   /************ End HomeNavBar Styles ************/
 
-  /************ Home Styles ************/
-  .home-logo {
+  /************ Logos Styles ************/
+  .pages-logo {
     margin-top: 100px;
   }
-  /************ End Home Styles ************/
+  /************ End Logos Styles ************/
 }
 
 @media screen and (min-width: 1440px) {
-  /************ Home Styles ************/
-  .home-logo {
+  /************ Logos Styles ************/
+  .pages-logo {
     width: 860px;
   }
 
-  .home-subtitle {
+  .pages-subtitle {
     margin-top: -129px;
   }
 
-  .home-subtitle p {
+  .pages-subtitle p {
     font-size: 1.3rem;
     width: 580px;
   }
-  /************ End Home Styles ************/
+  /************ End Logos Styles ************/
 }
 /************ End Breackpoints ************/
