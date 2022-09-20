@@ -12,7 +12,14 @@ const constants = {
   },
   BLACK_OPS_PAGE: "black-ops",
   BLACK_OPS_II_PAGE: "black-ops-2",
-  BLACK_OPS_III_PAGE: "black-ops-3",
+  BLACK_OPS_III: {
+    PAGE: "black-ops-3",
+    SHADOWS_OF_EVIL: "shadows-of-evil",
+    DER_EISSENDRACHE: "der-eissendrache",
+    ZETSUBOU_NO_SHIMA: "zetsubou-no-shima",
+    GOROD_KROVI: "gorod-krovi",
+    REVELATIONS: "revelations",
+  },
   BLACK_OPS_4_PAGE: "black-ops-4",
   BLACK_OPS_COLD_WAR_PAGE: "cold-war",
 };

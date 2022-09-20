@@ -58,17 +58,15 @@ html {
 }
 /************ End Logos Styles ************/
 
-/************ HomeItem Styles ************/
-.home-item {
+/************ PageItemTemplate Styles ************/
+.page-item {
   margin: 0 15px;
-  height: 340px;
 }
 
-.home-item-content {
+.page-item-content {
   display: block;
-  height: 200px;
 }
-/************ End HomeItem Styles ************/
+/************ End PageItemTemplate Styles ************/
 
 /************ Breackpoints ************/
 @media screen and (min-width: 600px) {

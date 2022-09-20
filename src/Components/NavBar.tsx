@@ -72,7 +72,7 @@ const NavBar = () => {
           <MenuItem>
             <span
               className="menu-item"
-              onClick={() => navigate(constants.BLACK_OPS_III_PAGE)}
+              onClick={() => navigate(constants.BLACK_OPS_III.PAGE)}
             >
               Black Ops III
             </span>

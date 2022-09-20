@@ -1,11 +1,15 @@
 import {
+  Button,
   Card,
   CardActionArea,
+  CardActions,
   CardContent,
+  CardHeader,
   CardMedia,
+  Collapse,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageItem from "../Models/PageItem";
 
@@ -15,6 +19,7 @@ interface PageItemProps {
 
 const PageItemTemplate = (props: PageItemProps) => {
   const navigate = useNavigate();
+  const [expanded, setExpanded] = useState(false);
 
   const handlePageItemClick: () => void = () => {
     navigate(props.pageItem.page);
@@ -23,9 +28,27 @@ const PageItemTemplate = (props: PageItemProps) => {
   const renderDescription = () => {
     if (props.pageItem.description) {
       return (
-        <Typography variant="body2" color="text.secondary">
-          {props.pageItem.description}
-        </Typography>
+        <Collapse in={expanded}>
+          <CardContent className="page-item-content">
+            <Typography variant="body2" color="text.secondary">
+              {props.pageItem.description}
+            </Typography>
+          </CardContent>
+        </Collapse>
+      );
+    } else {
+      return;
+    }
+  };
+
+  const renderButton = () => {
+    if (props.pageItem.description) {
+      return (
+        <CardActions>
+          <Button color="secondary" onClick={() => setExpanded(!expanded)}>
+            Show Description
+          </Button>
+        </CardActions>
       );
     } else {
       return;
@@ -33,21 +56,13 @@ const PageItemTemplate = (props: PageItemProps) => {
   };
 
   return (
-    <Card className="home-item">
+    <Card className="page-item">
       <CardActionArea onClick={handlePageItemClick}>
-        <CardMedia
-          component="img"
-          height="140"
-          image={props.pageItem.image}
-          alt="prueba"
-        />
-        <CardContent className="home-item-content">
-          <Typography gutterBottom variant="h5" component="div">
-            {props.pageItem.title}
-          </Typography>
-          {renderDescription()}
-        </CardContent>
+        <CardMedia component="img" height="140" image={props.pageItem.image} />
+        <CardHeader title={props.pageItem.title} />
+        {renderDescription()}
       </CardActionArea>
+      {renderButton()}
     </Card>
   );
 };
