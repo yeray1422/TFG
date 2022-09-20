@@ -1,4 +1,4 @@
-class Cards {
+class PageItem {
   id: number;
   title: string;
   image: string;
@@ -14,4 +14,4 @@ class Cards {
   }
 }
 
-export default Cards;
+export default PageItem;

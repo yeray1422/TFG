@@ -4,15 +4,15 @@ import { Grid, Stack } from "@mui/material";
 import axios from "axios";
 import constants from "../Utils/Constants";
 import PageLogos from "../Models/PageLogos";
-import HomeItem from "../Components/HomeItem";
-import Cards from "../Models/Cards";
+import PageItemTemplate from "../Components/PageItemTemplate";
+import PageItem from "../Models/PageItem";
 import News from "../Components/News";
 
 const pageLogoInitialState: PageLogos = constants.PAGE_LOGOS_INITIAL_STATE;
 
 const Home = () => {
   const [pageLogo, setPageLogo] = useState(pageLogoInitialState);
-  const [homeCardsArray, setHomeCardsArray] = useState<Array<Cards>>([]);
+  const [homeCardsArray, setHomeCardsArray] = useState<Array<PageItem>>([]);
 
   useEffect(() => {
     axios
@@ -53,9 +53,9 @@ const Home = () => {
         columns={{ xs: 3, sm: 6, md: 9 }}
         className="pages-item-list"
       >
-        {homeCardsArray.map((pageLogo, index) => (
+        {homeCardsArray.map((pageItem, index) => (
           <Grid item key={index} xs={3}>
-            <HomeItem pageLogo={pageLogo} />
+            <PageItemTemplate pageItem={pageItem} />
           </Grid>
         ))}
       </Grid>
