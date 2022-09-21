@@ -2,6 +2,10 @@ html {
   background-color: #303030;
 }
 
+body {
+  color: white;
+}
+
 /************ NavBar Styles ************/
 .menu-item-list {
   position: absolute;
