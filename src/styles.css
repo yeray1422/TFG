@@ -6,6 +6,11 @@ body {
   color: white;
 }
 
+.note {
+  color: #029bf3;
+  padding-left: 1rem;
+}
+
 /************ NavBar Styles ************/
 .menu-item-list {
   position: absolute;

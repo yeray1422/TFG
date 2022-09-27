@@ -45,7 +45,7 @@ const PageItemTemplate = (props: PageItemProps) => {
     if (props.pageItem.description) {
       return (
         <CardActions>
-          <Button color="secondary" onClick={() => setExpanded(!expanded)}>
+          <Button color="info" onClick={() => setExpanded(!expanded)}>
             Show Description
           </Button>
         </CardActions>
