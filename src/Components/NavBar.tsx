@@ -56,7 +56,7 @@ const NavBar = () => {
           <MenuItem>
             <span
               className="menu-item"
-              onClick={() => navigate(constants.BLACK_OPS_PAGE)}
+              onClick={() => navigate(`/${constants.BLACK_OPS_PAGE}`)}
             >
               Black Ops
             </span>
@@ -64,7 +64,7 @@ const NavBar = () => {
           <MenuItem>
             <span
               className="menu-item"
-              onClick={() => navigate(constants.BLACK_OPS_II_PAGE)}
+              onClick={() => navigate(`/${constants.BLACK_OPS_II_PAGE}`)}
             >
               Black Ops II
             </span>
@@ -72,7 +72,7 @@ const NavBar = () => {
           <MenuItem>
             <span
               className="menu-item"
-              onClick={() => navigate(constants.BLACK_OPS_III.PAGE)}
+              onClick={() => navigate(`/${constants.BLACK_OPS_III.PAGE}`)}
             >
               Black Ops III
             </span>
@@ -80,7 +80,7 @@ const NavBar = () => {
           <MenuItem>
             <span
               className="menu-item"
-              onClick={() => navigate(constants.BLACK_OPS_4_PAGE)}
+              onClick={() => navigate(`/${constants.BLACK_OPS_4_PAGE}`)}
             >
               Black Ops 4
             </span>
@@ -88,7 +88,7 @@ const NavBar = () => {
           <MenuItem>
             <span
               className="menu-item"
-              onClick={() => navigate(constants.BLACK_OPS_COLD_WAR_PAGE)}
+              onClick={() => navigate(`/${constants.BLACK_OPS_COLD_WAR_PAGE}`)}
             >
               Cold War
             </span>
