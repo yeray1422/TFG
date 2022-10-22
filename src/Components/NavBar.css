@@ -1,0 +1,86 @@
+.toolbar-title,
+.menu-item-link {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  transition: all 0.3s;
+}
+
+.toolbar-title:hover,
+.menu-item-link:hover {
+  background-color: rgb(61, 61, 61);
+}
+
+.toolbar-title:hover {
+  font-size: 1.6rem;
+}
+
+.menu-item-link:hover {
+  font-size: 1.3rem;
+}
+
+.menu-item-list {
+  position: fixed;
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 8px -7px rgba(0, 0, 0, 0.26);
+  border-radius: 0 0px 10px 10px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.menu-item-list.scrolled {
+  top: 0;
+}
+
+.hide-menu-item-list {
+  top: -100%;
+  transition: 0.8s;
+}
+
+.show-menu-item-list {
+  top: 56px;
+  transition: 0.5s;
+}
+
+.menu-item {
+  width: 95%;
+  margin-bottom: 5px;
+}
+
+.menu-item:hover {
+  background-color: transparent !important;
+}
+
+.menu-item-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.menu-item-link.active {
+  background-color: white;
+  color: #272727;
+  border-color: #272727;
+}
+
+@media screen and (min-width: 600px) {
+  .show-menu-item-list {
+    top: 64px;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .menu-item-list {
+    top: 64px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .menu-icon {
+    display: none !important;
+  }
+}
