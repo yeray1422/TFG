@@ -16,7 +16,6 @@ import constants from "../Utils/Constants";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenuHandler: () => void = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,26 +26,10 @@ const NavBar = () => {
     console.log("Search button click");
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", scrollHandler);
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
-  }, []);
-
-  const scrollHandler = () => {
-    if (window.scrollY >= 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-
   return (
     <AppBar position="fixed">
       <Stack className="nav-bar">
-        <Toolbar className={`nav-bar-principal ${isScrolled && "scrolled"}`}>
+        <Toolbar>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/" className="toolbar-title">
               <span>Zombies Easter Eggs</span>
@@ -61,8 +44,8 @@ const NavBar = () => {
         </Toolbar>
         <div
           className={`menu-item-list ${
-            isMenuOpen ? "show-menu-item-list" : "hide-menu-item-list"
-          } ${isScrolled && "scrolled"}`}
+            !isMenuOpen ? "hide-menu-item-list" : "show-menu-item-list"
+          }`}
         >
           <MenuItem className="menu-item">
             <NavLink

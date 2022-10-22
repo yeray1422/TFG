@@ -1,0 +1,8 @@
+.page-item {
+  margin: 0 15px;
+  border-radius: 12px;
+}
+
+.page-item-content {
+  display: block;
+}

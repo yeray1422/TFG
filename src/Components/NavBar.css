@@ -1,3 +1,8 @@
+.nav-bar {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
 .toolbar-title,
 .menu-item-link {
   text-decoration: none;
@@ -8,17 +13,35 @@
   transition: all 0.3s;
 }
 
+
 .toolbar-title:hover,
 .menu-item-link:hover {
   background-color: rgb(61, 61, 61);
 }
 
+.toolbar-title {
+  font-size: 1.3rem;
+}
+
 .toolbar-title:hover {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+}
+
+.menu-item-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.menu-item-link.active {
+  background-color: white;
+  color: #272727;
+  border-color: #272727;
 }
 
 .menu-item-link:hover {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .menu-item-list {
@@ -32,17 +55,13 @@
   width: 100%;
 }
 
-.menu-item-list.scrolled {
-  top: 0;
-}
-
 .hide-menu-item-list {
   top: -100%;
   transition: 0.8s;
 }
 
 .show-menu-item-list {
-  top: 56px;
+  top: 78px;
   transition: 0.5s;
 }
 
@@ -55,27 +74,14 @@
   background-color: transparent !important;
 }
 
-.menu-item-link {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-.menu-item-link.active {
-  background-color: white;
-  color: #272727;
-  border-color: #272727;
-}
-
 @media screen and (min-width: 600px) {
   .show-menu-item-list {
-    top: 64px;
+    top: 86px;
   }
 }
 
 @media screen and (min-width: 840px) {
   .menu-item-list {
-    top: 64px;
     flex-direction: row;
     justify-content: space-between;
   }
