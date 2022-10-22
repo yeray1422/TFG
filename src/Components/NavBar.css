@@ -82,6 +82,7 @@
 
 @media screen and (min-width: 840px) {
   .menu-item-list {
+    top: 86px;
     flex-direction: row;
     justify-content: space-between;
   }

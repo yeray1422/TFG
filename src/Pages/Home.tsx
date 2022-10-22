@@ -1,6 +1,7 @@
 import { Grid, Stack } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import News from "../Components/News";
 import PageItemTemplate from "../Components/PageItemTemplate";
 import PageItem from "../Models/PageItem";
 import PageLogos from "../Models/PageLogos";
@@ -57,6 +58,7 @@ const Home = () => {
           </Grid>
         ))}
       </Grid>
+      <News />
     </>
   );
 };
