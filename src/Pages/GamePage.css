@@ -1,0 +1,26 @@
+.paper {
+  background-color: #454545;
+  border-radius: 12px;
+}
+
+.pages-logo {
+  width: 280px;
+  height: auto;
+  margin-top: 100px;
+}
+
+.pages-subtitle {
+  width: 95%;
+  padding: 5px;
+  margin-top: -41px;
+  background-color: #202020;
+  border-radius: 12px 12px 6px 6px;
+}
+
+.pages-subtitle p {
+  margin: 0 50px;
+  padding: 10px 0;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+}
