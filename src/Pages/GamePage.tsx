@@ -39,29 +39,41 @@ const GamePage = () => {
     setPageLogo(data[0]);
   };
 
-  const getCards = async () => {
-    setGamePageCardsArray([]);
-    const response = await axios.get(
+  const getCards = () => {
+    // setGamePageCardsArray([]);
+    // const response = await axios.get(
+    //   `${constants.BASE_URL}${getUrlPageName()}`,
+    //   {
+    //     headers: {
+    //       apikey: constants.APIKEY,
+    //     },
+    //   }
+    // );
+    // console.log(response);
+
+    // if (response.status === 200) {
+    //   setGamePageCardsArray(response.data);
+    // } else {
+    //   setGamePageCardsArray([]);
+    // }
+    axios.get(
       `${constants.BASE_URL}${getUrlPageName()}`,
       {
         headers: {
           apikey: constants.APIKEY,
-        },
+        }
       }
-    );
-    console.log(response);
-
-    if (response.status === 200) {
-      setGamePageCardsArray(response.data);
-    } else {
-      setGamePageCardsArray([]);
-    }
+    ).then((res) => setGamePageCardsArray(res.data))
+    .catch((e) => {
+      setGamePageCardsArray([])
+      console.log(e);
+    })
   };
 
   useEffect(() => {
     getLogo();
     getCards();
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
