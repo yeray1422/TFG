@@ -40,7 +40,8 @@ const GamePage = () => {
   };
 
   const getCards = async () => {
-    const { data } = await axios.get(
+    setGamePageCardsArray([]);
+    const response = await axios.get(
       `${constants.BASE_URL}${getUrlPageName()}`,
       {
         headers: {
@@ -48,9 +49,13 @@ const GamePage = () => {
         },
       }
     );
-    console.log(data);
+    console.log(response);
 
-    setGamePageCardsArray(data);
+    if (response.status === 200) {
+      setGamePageCardsArray(response.data);
+    } else {
+      setGamePageCardsArray([]);
+    }
   };
 
   useEffect(() => {
