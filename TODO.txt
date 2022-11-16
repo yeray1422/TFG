@@ -1,1 +1,3 @@
 crear enpoints para todas las paginas
+
+estilos de los emojis de los indices y la lista
