@@ -18,34 +18,45 @@ const GamePage = () => {
   );
   const location = useLocation();
 
-  useEffect(() => {
-    const getUrlPageName: () => string = () => {
-      const pathname = location.pathname;
-      const urlPageName = pathname.substring(1);
+  const getUrlPageName: () => string = () => {
+    const pathname = location.pathname;
+    const urlPageName = pathname.substring(1);
 
-      return urlPageName;
-    };
+    return urlPageName;
+  };
 
-    axios
-      .get(`${constants.BASE_URL}logos`, {
-        params: {
-          page: `eq.${getUrlPageName()}`,
-        },
-        headers: {
-          apikey: constants.APIKEY,
-        },
-      })
-      .then((res) => setPageLogo(res.data[0]))
-      .catch(console.log);
-
-    axios.get(`${constants.BASE_URL}${getUrlPageName()}`, {
+  const getLogo = async () => {
+    const { data } = await axios.get(`${constants.BASE_URL}logos`, {
+      params: {
+        page: `eq.${getUrlPageName()}`,
+      },
       headers: {
         apikey: constants.APIKEY,
       },
-    })
-    .then((res) => setGamePageCardsArray(res.data))
-    .catch(console.log);
-  }, [location.pathname]);
+    });
+    console.log(data);
+
+    setPageLogo(data[0]);
+  };
+
+  const getCards = async () => {
+    const { data } = await axios.get(
+      `${constants.BASE_URL}${getUrlPageName()}`,
+      {
+        headers: {
+          apikey: constants.APIKEY,
+        },
+      }
+    );
+    console.log(data);
+
+    setGamePageCardsArray(data);
+  };
+
+  useEffect(() => {
+    getLogo();
+    getCards();
+  }, []);
 
   return (
     <>
