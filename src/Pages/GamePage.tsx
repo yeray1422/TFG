@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Grid, Stack } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -5,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import PageItemTemplate from "../Components/PageItemTemplate";
 import PageItem from "../Models/PageItem";
 import PageLogos from "../Models/PageLogos";
+import { getCardsArray, getPageLogo } from "../Utils/APICalls";
 import constants from "../Utils/Constants";
 
 import "./GamePage.css";
@@ -25,54 +27,9 @@ const GamePage = () => {
     return urlPageName;
   };
 
-  const getLogo = async () => {
-    const { data } = await axios.get(`${constants.BASE_URL}logos`, {
-      params: {
-        page: `eq.${getUrlPageName()}`,
-      },
-      headers: {
-        apikey: constants.APIKEY,
-      },
-    });
-    console.log(data);
-
-    setPageLogo(data[0]);
-  };
-
-  const getCards = () => {
-    // setGamePageCardsArray([]);
-    // const response = await axios.get(
-    //   `${constants.BASE_URL}${getUrlPageName()}`,
-    //   {
-    //     headers: {
-    //       apikey: constants.APIKEY,
-    //     },
-    //   }
-    // );
-    // console.log(response);
-
-    // if (response.status === 200) {
-    //   setGamePageCardsArray(response.data);
-    // } else {
-    //   setGamePageCardsArray([]);
-    // }
-    axios.get(
-      `${constants.BASE_URL}${getUrlPageName()}`,
-      {
-        headers: {
-          apikey: constants.APIKEY,
-        }
-      }
-    ).then((res) => setGamePageCardsArray(res.data))
-    .catch((e) => {
-      setGamePageCardsArray([])
-      console.log(e);
-    })
-  };
-
   useEffect(() => {
-    getLogo();
-    getCards();
+    getPageLogo(getUrlPageName(), setPageLogo);
+    getCardsArray(getUrlPageName(), setGamePageCardsArray);
   }, [location.pathname]);
 
   return (
