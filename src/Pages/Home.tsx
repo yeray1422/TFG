@@ -1,5 +1,4 @@
 import { Grid, Stack } from "@mui/material";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 // import News from "../Components/News";
 import PageItemTemplate from "../Components/PageItemTemplate";
