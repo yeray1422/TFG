@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MapPageIndex from "../Components/MapPageIndex";
 
 const MapPage = () => {

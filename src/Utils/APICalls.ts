@@ -1,4 +1,5 @@
 import axios from "axios";
+import MapItem from "../Models/MapItem";
 import PageItem from "../Models/PageItem";
 import PageLogos from "../Models/PageLogos";
 import constants from "./Constants";
@@ -40,4 +41,21 @@ const getCardsArray = async (
     });
 };
 
-export { getPageLogo, getCardsArray };
+const getMapItems = async (
+  endpoint: string,
+  setMapItems: React.Dispatch<React.SetStateAction<MapItem[]>>
+) => {
+  await axios
+    .get(`${constants.BASE_URL}${endpoint}`, {
+      headers: {
+        apikey: constants.APIKEY,
+      },
+    })
+    .then((res) => setMapItems(res.data))
+    .catch((e) => {
+      setMapItems([]);
+      console.log(e);
+    });
+};
+
+export { getPageLogo, getCardsArray, getMapItems };
