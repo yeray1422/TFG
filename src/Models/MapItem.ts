@@ -3,20 +3,26 @@ class MapItem {
   type: string;
   emoji: string;
   name: string;
-  parts: Map<String, Map<String, String>>;
+  part: string;
+  location: string[];
+  description: string[];
 
   constructor(
     id: number,
     type: string,
     emoji: string,
     name: string,
-    parts: Map<String, Map<String, String>>
+    part: string,
+    location: string[],
+    description: string[]
   ) {
     this.id = id;
     this.type = type;
     this.emoji = emoji;
     this.name = name;
-    this.parts = parts;
+    this.part = part;
+    this.location = location;
+    this.description = description;
   }
 }
 

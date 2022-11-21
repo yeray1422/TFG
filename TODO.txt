@@ -1,3 +1,7 @@
-crear enpoints para todas las paginas
+estilos titulos de cada item de MapPage
 
-estilos de los emojis de los indices y la lista
+CAPTURAS
+- Ritual nero ruta 2
+- Mejor llave de invocación
+- Mejor pluma ritual
+- Ruta ritual Jessica

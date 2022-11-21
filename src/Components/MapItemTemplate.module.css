@@ -1,0 +1,21 @@
+.map-item-card {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.map-item-images {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-arrow,
+.right-arrow {
+  height: 100%;
+}
+
+.item-image {
+  width: 300;
+  height: 200;
+}

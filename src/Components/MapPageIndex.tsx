@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Collapse,
+  Link,
   List,
   ListItemButton,
   ListItemIcon,
@@ -13,38 +14,24 @@ import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import styles from "./MapPageIndex.module.css";
 import getEmoji from "../Utils/Emojis";
 import MapItem from "../Models/MapItem";
-import { getMapItems } from "../Utils/APICalls";
-import { useLocation } from "react-router-dom";
 
-const MapPageIndex = () => {
-  const [indexItems, setIndexItems] = useState<MapItem[]>([]);
+interface MapPageItemsProps {
+  items: MapItem[];
+}
+
+const MapPageIndex = (props: MapPageItemsProps) => {
   const [construibles, setConstruibles] = useState<MapItem[]>([]);
   const [easterEgg, setEasterEgg] = useState<MapItem[]>([]);
   const [openConstruibles, setOpenConstruibles] = useState(false);
   const [openEasterEgg, setOpenEasterEgg] = useState(false);
 
-  const location = useLocation();
-
-  const getUrlPageName: () => string = () => {
-    const pathname = location.pathname;
-    const pathnameSplit = pathname.split("/");
-
-    return pathnameSplit[2];
-  };
+  let itemName = "";
 
   useEffect(() => {
-    getMapItems(getUrlPageName(), setIndexItems);
-  }, []);
+    setConstruibles(props.items.filter((item) => item.type === "construible"));
 
-  useEffect(() => {
-    setConstruibles(
-      indexItems.filter((indexItem) => indexItem.type === "construible")
-    );
-
-    setEasterEgg(
-      indexItems.filter((itemIndex) => itemIndex.type === "easter_egg")
-    );
-  }, [indexItems]);
+    setEasterEgg(props.items.filter((item) => item.type === "easter_egg"));
+  }, [props.items]);
 
   return (
     <List className={styles.list}>
@@ -68,16 +55,28 @@ const MapPageIndex = () => {
               easter egg, pero siempre ayudan.
             </p>
             <List component="div">
-              {construibles.map((construible) => (
-                <ListItemButton key={construible.id} sx={{ pl: 6 }}>
-                  <ListItemIcon>
-                    <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
-                      {getEmoji(construible.emoji)}
-                    </span>
-                  </ListItemIcon>
-                  <ListItemText primary={construible.name} />
-                </ListItemButton>
-              ))}
+              {construibles.map((construible) => {
+                if (construible.name !== itemName) {
+                  itemName = construible.name;
+
+                  return (
+                    <ListItemButton key={construible.id} sx={{ pl: 6 }}>
+                      <ListItemIcon>
+                        <span
+                          style={{ fontSize: "1.25rem", marginTop: "-5px" }}
+                        >
+                          {getEmoji(construible.emoji)}
+                        </span>
+                      </ListItemIcon>
+                      <Link href={`#${construible.name}`}>
+                        <ListItemText primary={construible.name} />
+                      </Link>
+                    </ListItemButton>
+                  );
+                } else {
+                  return "";
+                }
+              })}
             </List>
           </Collapse>
         </>
@@ -93,16 +92,28 @@ const MapPageIndex = () => {
           </ListItemButton>
           <Collapse in={openEasterEgg}>
             <List component="div">
-              {easterEgg.map((step) => (
-                <ListItemButton key={step.id} sx={{ pl: 6 }}>
-                  <ListItemIcon>
-                  <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
-                      {getEmoji(step.emoji)}
-                    </span>
-                  </ListItemIcon>
-                  <ListItemText primary={step.name} />
-                </ListItemButton>
-              ))}
+              {easterEgg.map((step) => {
+                if (step.name !== itemName) {
+                  itemName = step.name;
+
+                  return (
+                    <ListItemButton key={step.id} sx={{ pl: 6 }}>
+                      <ListItemIcon>
+                        <span
+                          style={{ fontSize: "1.25rem", marginTop: "-5px" }}
+                        >
+                          {getEmoji(step.emoji)}
+                        </span>
+                      </ListItemIcon>
+                      <Link href={`#${step.name}`}>
+                        <ListItemText primary={step.name} />
+                      </Link>
+                    </ListItemButton>
+                  );
+                } else {
+                  return "";
+                }
+              })}
             </List>
           </Collapse>
         </>
