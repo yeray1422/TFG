@@ -16,6 +16,6 @@
 }
 
 .item-image {
-  width: 300;
-  height: 200;
+  width: 300px;
+  height: auto;
 }
