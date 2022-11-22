@@ -28,6 +28,9 @@ const MapPage = () => {
   }, []);
 
   const renderItemName = (item: MapItem) => {
+    console.log(item.mock);
+    // console.log(item.mock.entries());
+    
     if (itemName !== item.name) {
       itemName = item.name;
       return (
