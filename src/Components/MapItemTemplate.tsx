@@ -2,6 +2,7 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import {
   Card,
   CardContent,
+  CardHeader,
   CardMedia,
   IconButton,
   Typography,
@@ -70,6 +71,7 @@ const MapItemTemplate = (props: MapItemProps) => {
         </div>
       </CardMedia>
       <CardContent>
+        <CardHeader title={props.item.part} />
         <Typography variant="body2" color="text.secondary">
           {getSelectedDescription()}
         </Typography>

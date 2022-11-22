@@ -5,3 +5,10 @@ CAPTURAS
 - Mejor llave de invocación
 - Mejor pluma ritual
 - Ruta ritual Jessica
+- Botella SpeedCola
+- Botella Double Tap
+- Mesa ritual Jack
+- Peluca ritual
+- Cinturón ritual
+- Ritual PaP (colocación de objetos)
+- Mejor pieza 3 escudo localización 1 (cerca de huevera)
