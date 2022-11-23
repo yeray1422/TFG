@@ -10,6 +10,8 @@ const getEmoji = (emoji: string) => {
       return "🔫";
     case "EASTER_EGG":
       return "🌟";
+    case "SWORD":
+      return "⚔️";
   }
 };
 

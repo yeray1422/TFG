@@ -3,10 +3,9 @@ interface MapItem {
   type: string;
   emoji: string;
   name: string;
-  part: string;
-  location: string[];
-  description: string[];
-  mock: Map<string, Map<string, string>>;
+  pieces: string[];
+  locations: string[][];
+  descriptions: string[][];
 }
 
 export default MapItem;

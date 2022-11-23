@@ -8,12 +8,13 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import MapItem from "../Models/MapItem";
 
 import styles from "./MapItemTemplate.module.css";
 
 interface MapItemProps {
-  item: MapItem;
+  piece: string;
+  locations: string[];
+  descriptions: string[];
 }
 
 const MapItemTemplate = (props: MapItemProps) => {
@@ -21,14 +22,14 @@ const MapItemTemplate = (props: MapItemProps) => {
 
   const handleLeftButtonClick: () => void = () => {
     if (selectedImage <= 0) {
-      setSelectedImage(props.item.location.length - 1);
+      setSelectedImage(props.locations.length - 1);
     } else {
       setSelectedImage(selectedImage - 1);
     }
   };
 
   const handleRightButtonClick: () => void = () => {
-    if (selectedImage >= props.item.location.length - 1) {
+    if (selectedImage >= props.locations.length - 1) {
       setSelectedImage(0);
     } else {
       setSelectedImage(selectedImage + 1);
@@ -36,11 +37,11 @@ const MapItemTemplate = (props: MapItemProps) => {
   };
 
   const getSelectedImage: () => string = () => {
-    return props.item.location[selectedImage];
+    return props.locations[selectedImage];
   };
 
   const getSelectedDescription: () => string = () => {
-    return props.item.description[selectedImage];
+    return props.descriptions[selectedImage];
   };
 
   return (
@@ -71,7 +72,7 @@ const MapItemTemplate = (props: MapItemProps) => {
         </div>
       </CardMedia>
       <CardContent>
-        <CardHeader title={props.item.part} />
+        <CardHeader title={props.piece} />
         <Typography variant="body2" color="text.secondary">
           {getSelectedDescription()}
         </Typography>
