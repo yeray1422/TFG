@@ -14,35 +14,27 @@ import styles from "./MapItemTemplate.module.css";
 
 interface MapItemProps {
   piece: string;
-  locations: string[];
-  descriptions: string[];
+  locationsObject: Record<string, string>[];
 }
 
 const MapItemTemplate = (props: MapItemProps) => {
   const [selectedImage, setSelectedImage] = useState(0);
+  const [values] = useState(Object.values(props.locationsObject));
 
   const handleLeftButtonClick: () => void = () => {
     if (selectedImage <= 0) {
-      setSelectedImage(props.locations.length - 1);
+      setSelectedImage(values.length - 1);
     } else {
       setSelectedImage(selectedImage - 1);
     }
   };
 
   const handleRightButtonClick: () => void = () => {
-    if (selectedImage >= props.locations.length - 1) {
+    if (selectedImage >= values.length - 1) {
       setSelectedImage(0);
     } else {
       setSelectedImage(selectedImage + 1);
     }
-  };
-
-  const getSelectedImage: () => string = () => {
-    return props.locations[selectedImage];
-  };
-
-  const getSelectedDescription: () => string = () => {
-    return props.descriptions[selectedImage];
   };
 
   return (
@@ -58,7 +50,7 @@ const MapItemTemplate = (props: MapItemProps) => {
         </div>
         <div>
           <img
-            src={getSelectedImage()}
+            src={values[selectedImage]["image"]}
             alt=""
             className={styles["item-image"]}
           />
@@ -73,10 +65,10 @@ const MapItemTemplate = (props: MapItemProps) => {
         </div>
       </CardMedia>
       <CardContent>
-      <Divider variant="middle" sx={{ mt: "5px"}} />
+        <Divider variant="middle" sx={{ mt: "5px" }} />
         <CardHeader title={props.piece} />
         <Typography variant="body2" color="text.secondary">
-          {getSelectedDescription()}
+          {values[selectedImage]["description"]}
         </Typography>
       </CardContent>
     </Card>

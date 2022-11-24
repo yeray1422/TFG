@@ -4,9 +4,7 @@ interface MapItem {
   emoji: string;
   name: string;
   usage: string;
-  pieces: string[];
-  locations: string[][];
-  descriptions: string[][];
+  data: Record<string, Record<string, Record<string, string>>>;
 }
 
 export default MapItem;
