@@ -25,9 +25,9 @@ const MapPage = () => {
   return (
     <>
       <MapPageIndex items={items} />
-      {items.map((item) => (
-        <MapItems key={item.id} item={item} />
-      ))}
+      {items.map((item) => {
+        return <MapItems key={item.id} item={item} />;
+      })}
     </>
   );
 };

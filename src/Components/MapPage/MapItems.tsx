@@ -21,6 +21,8 @@ interface MapItemsProps {
 
 const MapItems = (props: MapItemsProps) => {
   const [openCard, setOpenCard] = useState(false);
+  const [keys] = useState(Object.keys(props.item.data));
+  const [values] = useState(Object.values(props.item.data));
 
   const openCardHandler = () => {
     setOpenCard(!openCard);
@@ -50,12 +52,11 @@ const MapItems = (props: MapItemsProps) => {
           </Typography>
         </CardContent>
         <Collapse in={openCard}>
-          {props.item.pieces.map((piece, index) => (
+          {keys.map((key, index) => (
             <React.Fragment key={`${props.item.id}:${index}`}>
               <MapItemTemplate
-                piece={piece}
-                locations={props.item.locations[index]}
-                descriptions={props.item.descriptions[index]}
+                piece={key}
+                locationsObject={Object.values(values[index])}
               />
               <Divider variant="middle" />
             </React.Fragment>
