@@ -4,6 +4,7 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  Divider,
   IconButton,
   Typography,
 } from "@mui/material";
@@ -72,6 +73,7 @@ const MapItemTemplate = (props: MapItemProps) => {
         </div>
       </CardMedia>
       <CardContent>
+      <Divider variant="middle" sx={{ mt: "5px"}} />
         <CardHeader title={props.piece} />
         <Typography variant="body2" color="text.secondary">
           {getSelectedDescription()}

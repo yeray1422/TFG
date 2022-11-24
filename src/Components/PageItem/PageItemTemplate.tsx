@@ -1,7 +1,7 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Collapse, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PageItem from "../Models/PageItem";
+import PageItem from "../../Models/PageItem";
 
 import "./PageItemTemplate.css";
 

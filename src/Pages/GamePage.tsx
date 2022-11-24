@@ -2,7 +2,7 @@
 import { Grid, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import PageItemTemplate from "../Components/PageItemTemplate";
+import PageItemTemplate from "../Components/PageItem/PageItemTemplate";
 import PageItem from "../Models/PageItem";
 import PageLogos from "../Models/PageLogos";
 import { getCardsArray, getPageLogo } from "../Utils/APICalls";

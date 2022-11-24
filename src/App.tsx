@@ -2,7 +2,7 @@ import { ThemeProvider } from "@emotion/react";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/NavBar/NavBar";
 import GamePage from "./Pages/GamePage";
 import Home from "./Pages/Home";
 import MapPage from "./Pages/MapPage";

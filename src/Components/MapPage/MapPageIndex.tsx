@@ -12,8 +12,8 @@ import {
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
 import styles from "./MapPageIndex.module.css";
-import getEmoji from "../Utils/Emojis";
-import MapItem from "../Models/MapItem";
+import getEmoji from "../../Utils/Emojis";
+import MapItem from "../../Models/MapItem";
 
 interface MapPageItemsProps {
   items: MapItem[];
@@ -24,8 +24,6 @@ const MapPageIndex = (props: MapPageItemsProps) => {
   const [easterEgg, setEasterEgg] = useState<MapItem[]>([]);
   const [openConstruibles, setOpenConstruibles] = useState(false);
   const [openEasterEgg, setOpenEasterEgg] = useState(false);
-
-  let itemName = "";
 
   useEffect(() => {
     setConstruibles(props.items.filter((item) => item.type === "construible"));
@@ -51,32 +49,22 @@ const MapPageIndex = (props: MapPageItemsProps) => {
           </ListItemButton>
           <Collapse in={openConstruibles}>
             <p className="note">
-              *Nota: No es necesario tener los construibles para completar el
+              *Nota: No todos los constuibles son necesarios para completar el
               easter egg, pero siempre ayudan.
             </p>
             <List component="div">
-              {construibles.map((construible) => {
-                if (construible.name !== itemName) {
-                  itemName = construible.name;
-
-                  return (
-                    <ListItemButton key={construible.id} sx={{ pl: 6 }}>
-                      <ListItemIcon>
-                        <span
-                          style={{ fontSize: "1.25rem", marginTop: "-5px" }}
-                        >
-                          {getEmoji(construible.emoji)}
-                        </span>
-                      </ListItemIcon>
-                      <Link href={`#${construible.name}`}>
-                        <ListItemText primary={construible.name} />
-                      </Link>
-                    </ListItemButton>
-                  );
-                } else {
-                  return "";
-                }
-              })}
+              {construibles.map((construible) => (
+                <ListItemButton key={construible.id} sx={{ pl: 6 }}>
+                  <ListItemIcon>
+                    <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+                      {getEmoji(construible.emoji)}
+                    </span>
+                  </ListItemIcon>
+                  <Link href={`#${construible.name}`}>
+                    <ListItemText primary={construible.name} />
+                  </Link>
+                </ListItemButton>
+              ))}
             </List>
           </Collapse>
         </>
@@ -92,28 +80,18 @@ const MapPageIndex = (props: MapPageItemsProps) => {
           </ListItemButton>
           <Collapse in={openEasterEgg}>
             <List component="div">
-              {easterEgg.map((step) => {
-                if (step.name !== itemName) {
-                  itemName = step.name;
-
-                  return (
-                    <ListItemButton key={step.id} sx={{ pl: 6 }}>
-                      <ListItemIcon>
-                        <span
-                          style={{ fontSize: "1.25rem", marginTop: "-5px" }}
-                        >
-                          {getEmoji(step.emoji)}
-                        </span>
-                      </ListItemIcon>
-                      <Link href={`#${step.name}`}>
-                        <ListItemText primary={step.name} />
-                      </Link>
-                    </ListItemButton>
-                  );
-                } else {
-                  return "";
-                }
-              })}
+              {easterEgg.map((step) => (
+                <ListItemButton key={step.id} sx={{ pl: 6 }}>
+                  <ListItemIcon>
+                    <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+                      {getEmoji(step.emoji)}
+                    </span>
+                  </ListItemIcon>
+                  <Link href={`#${step.name}`}>
+                    <ListItemText primary={step.name} />
+                  </Link>
+                </ListItemButton>
+              ))}
             </List>
           </Collapse>
         </>

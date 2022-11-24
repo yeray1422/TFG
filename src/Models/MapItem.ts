@@ -3,6 +3,7 @@ interface MapItem {
   type: string;
   emoji: string;
   name: string;
+  usage: string;
   pieces: string[];
   locations: string[][];
   descriptions: string[][];

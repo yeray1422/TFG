@@ -1,0 +1,91 @@
+{
+  "Construibles": {
+    "Escudo": {
+      "Pieza 1": {
+        "Localización 2": "Frente a perk",
+        "Localización 3": "Izquierda de perk"
+      },
+      "Pieza 2": { 
+        "Localización 3": "Puente"
+      },
+      "Pieza 3": {
+        "Localización 1": "Mejor cerca huevera", 
+        "Localización 3": "Derecha de perk"
+      }
+    },
+    "Espada": {
+      "Simbolos": {
+        "Mapa": "Mapa central",
+        "Rutas": ["Canals", "Waterfront", "Footlight"],
+        "Pared": "Simbolos"
+      },
+      "Hueveras": ["Espada"]
+    },
+    "Protector Civil": {
+      "Fusible 1": "Localizaciones varias",
+      "Fusible 2": "Localizaciones varias",
+      "Fusible 3": "Localizaciones varias",
+      "Maquina de fusibles": "Localización",
+      "Zonas de activación": {
+        "Localizaciones ya hechas": ["Huevera Jessica"]
+      }
+    },
+    "Siervo de apoticón": {
+      "Fumigadores": {
+        "Localizaciones ya hechas": {
+          "Inicio": ["Camión", "Caja", "Pared"],
+          "Medio": [],
+          "Canals": ["Chicles"],
+          "Waterfront": [],
+          "Footlight": []
+        }
+      },
+      "Xenomateria": "Foto",
+      "Siervo": "Mesa de crafteo"
+    }
+  },
+  "Easter Egg": {
+    "Rituales": {
+      "Personajes": {
+        "Nero": ["Pluma", "Gusano"],
+        "Jessica": ["Ruta", "Peluca", "Gusano"],
+        "Jack": ["Gusano"],
+        "Floyd": ["Cinturón", "Gusano"]
+      },
+      "Llave de invocación": "Mejor",
+      "PaP": ["Colocación de objetos"]
+    },
+    "Mejora Espada": {
+      "Recogida": ["Nero", "Jessica", "Floyd", "Jack"],
+      "Entrega": ["Nero", "Jessica", "Floyd", "Jack"],
+      "Zonas": ["Nero", "Jessica", "Floyd", "Jack"]
+    },
+    "Libro Zona Nero": ["Preinteracción", "Postinteracción"],
+    "Bandera": {
+      "Zona de recogida": "Foto",
+      "Ruta Nero": ["Zona 1", "Zona 2", "Mesa"],
+      "Ruta Jessica": ["Zona 1", "Zona 2", "Mesa"],
+      "Ruta Floyd": ["Zona 1", "Zona 2", "Mesa"],
+      "Ruta Jack": ["Zona 1", "Zona 2", "Mesa"]
+    },
+    "Captura de Shadowman": {
+      "Activación de Keepers": "Foto de keepers",
+      "Shadowman sin protección": "Foto",
+      "Shadowman capturado": "Gif"
+    },
+    "Electrificar vias": {
+      "Cajas": ["Canals", "Waterfront", "Footlight"]
+    },
+    "Electrificar Guardianes": "Gif"
+  },
+  "Easter Egg Secundarios": {
+    "Botellas": ["SpeedCola", "Double Tap"],
+    "Mejora Arnies": [
+      "Captura Arnies en caja",
+      "Sombrero zona Nero",
+      "Objeto zona Jack",
+      "Pajarita zona Floyd",
+      "Objeto zona Jessica (Sombrero?)"
+    ]
+  }
+}

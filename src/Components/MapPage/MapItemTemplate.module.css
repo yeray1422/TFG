@@ -1,6 +1,9 @@
 .map-item-card {
   margin: 0.5rem;
   padding: 0.5rem;
+  background-color: #171717;
+  border: 1px solid #fff;
+  border-radius: 12px !important;
 }
 
 .map-item-images {
@@ -16,6 +19,6 @@
 }
 
 .item-image {
-  width: 300px;
+  width: 280px;
   height: auto;
 }

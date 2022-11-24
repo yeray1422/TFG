@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link, NavLink } from "react-router-dom";
 
 import "./NavBar.css";
-import constants from "../Utils/Constants";
+import constants from "../../Utils/Constants";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

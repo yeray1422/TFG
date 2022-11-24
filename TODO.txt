@@ -1,19 +1,4 @@
 estilos titulos de cada item de MapPage
-
-CAPTURAS
-- Ritual nero ruta 2
-- Mejor llave de invocación
-- Mejor pluma ritual
-- Ruta ritual Jessica
-- Botella SpeedCola
-- Botella Double Tap
-- Mesa ritual Jack
-- Peluca ritual
-- Cinturón ritual
-- Ritual PaP (colocación de objetos)
-- Mejor pieza 3 escudo localización 1 (cerca de huevera)
-- Simbolos espada
-- Bestia puerta espada
-- Huevera Espada
-- Huevera Floyd
-- Huevera Jack
+pagina error o proximamente
+hacer imagenes de proximamente
+logos
