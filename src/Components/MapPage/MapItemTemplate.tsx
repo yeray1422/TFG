@@ -44,6 +44,7 @@ const MapItemTemplate = (props: MapItemProps) => {
           <IconButton
             onClick={handleLeftButtonClick}
             className={styles["left-arrow"]}
+            disabled={values.length <= 1}
           >
             <KeyboardArrowLeft />
           </IconButton>
@@ -59,6 +60,7 @@ const MapItemTemplate = (props: MapItemProps) => {
           <IconButton
             onClick={handleRightButtonClick}
             className={styles["right-arrow"]}
+            disabled={values.length <= 1}
           >
             <KeyboardArrowRight />
           </IconButton>
