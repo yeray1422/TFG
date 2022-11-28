@@ -16,6 +16,10 @@ const getEmoji = (emoji: string) => {
       return "⚔️";
     case "RITUAL":
       return "♍";
+    case "MONEY":
+      return "💵";
+    case "PERK":
+      return "🍾";
   }
 };
 

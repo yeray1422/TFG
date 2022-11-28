@@ -22,13 +22,17 @@ interface MapPageItemsProps {
 const MapPageIndex = (props: MapPageItemsProps) => {
   const [construibles, setConstruibles] = useState<MapItem[]>([]);
   const [easterEgg, setEasterEgg] = useState<MapItem[]>([]);
+  const [easterEgg2, setEasterEgg2] = useState<MapItem[]>([]);
   const [openConstruibles, setOpenConstruibles] = useState(false);
   const [openEasterEgg, setOpenEasterEgg] = useState(false);
+  const [openEasterEgg2, setOpenEasterEgg2] = useState(false);
 
   useEffect(() => {
     setConstruibles(props.items.filter((item) => item.type === "construible"));
 
     setEasterEgg(props.items.filter((item) => item.type === "easter_egg"));
+
+    setEasterEgg2(props.items.filter((item) => item.type === "easter_egg2"));
   }, [props.items]);
 
   return (
@@ -73,7 +77,9 @@ const MapPageIndex = (props: MapPageItemsProps) => {
         <>
           <ListItemButton onClick={() => setOpenEasterEgg(!openEasterEgg)}>
             <ListItemIcon>
-              <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>🌟</span>
+              <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+                {getEmoji("EASTER_EGG")}
+              </span>
             </ListItemIcon>
             <ListItemText primary="Guía Easter Egg" />
             {openEasterEgg ? <ExpandLess /> : <ExpandMore />}
@@ -89,6 +95,35 @@ const MapPageIndex = (props: MapPageItemsProps) => {
                   </ListItemIcon>
                   <Link href={`#${step.name}`}>
                     <ListItemText primary={step.name} />
+                  </Link>
+                </ListItemButton>
+              ))}
+            </List>
+          </Collapse>
+        </>
+      )}
+      {easterEgg2.length > 0 && (
+        <>
+          <ListItemButton onClick={() => setOpenEasterEgg2(!openEasterEgg2)}>
+            <ListItemIcon>
+              <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+                {getEmoji("EASTER_EGG2")}
+              </span>
+            </ListItemIcon>
+            <ListItemText primary="Easter Eggs Secundarios" />
+            {openEasterEgg2 ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <Collapse in={openEasterEgg2}>
+            <List component="div">
+              {easterEgg2.map((secund) => (
+                <ListItemButton key={secund.id} sx={{ pl: 6 }}>
+                  <ListItemIcon>
+                    <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+                      {getEmoji(secund.emoji)}
+                    </span>
+                  </ListItemIcon>
+                  <Link href={`#${secund.name}`}>
+                    <ListItemText primary={secund.name} />
                   </Link>
                 </ListItemButton>
               ))}
