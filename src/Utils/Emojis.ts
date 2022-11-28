@@ -12,6 +12,8 @@ const getEmoji = (emoji: string) => {
       return "🌟";
     case "SWORD":
       return "⚔️";
+    case "RITUAL":
+      return "♍";
   }
 };
 
