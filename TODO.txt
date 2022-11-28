@@ -1,4 +1,3 @@
 estilos titulos de cada item de MapPage
-pagina error o proximamente
 hacer imagenes de proximamente
 logos

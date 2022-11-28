@@ -47,13 +47,11 @@
   "Easter Egg": {
     "Rituales": {
       "Personajes": {
-        "Nero": ["Pluma", "Gusano"],
         "Jessica": ["Ruta", "Peluca", "Gusano"],
         "Jack": ["Gusano"],
-        "Floyd": ["Cinturón", "Gusano"]
+        "Floyd": ["Cinturón"]
       },
-      "Llave de invocación": "Mejor",
-      "PaP": ["Colocación de objetos"]
+      "PaP": ["GIF Colocación de objetos", "PaP"]
     },
     "Mejora Espada": {
       "Recogida": ["Nero", "Jessica", "Floyd", "Jack"],
