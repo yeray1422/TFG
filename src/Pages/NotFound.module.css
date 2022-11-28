@@ -1,0 +1,31 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.container p {
+  text-align: center;
+}
+
+.container a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all .3s;
+}
+
+.container a:hover {
+  background-color: #616161;
+  font-size: 1.1rem;
+}
