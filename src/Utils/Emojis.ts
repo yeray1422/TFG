@@ -20,6 +20,16 @@ const getEmoji = (emoji: string) => {
       return "💵";
     case "PERK":
       return "🍾";
+    case "BOOK":
+      return "📖";
+    case "FLAG":
+      return "🏴";
+    case "SQUID":
+      return "🦑";
+    case "RAILWAY":
+      return "🛤️";
+    case "LIGHTNING":
+      return "🌩️";
   }
 };
 

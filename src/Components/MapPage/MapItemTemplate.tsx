@@ -69,7 +69,7 @@ const MapItemTemplate = (props: MapItemProps) => {
       <CardContent>
         <Divider variant="middle" sx={{ mt: "5px" }} />
         <CardHeader title={props.piece} />
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" textAlign="justify">
           {values[selectedImage]["description"]}
         </Typography>
       </CardContent>

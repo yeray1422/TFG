@@ -1,3 +1,4 @@
 estilos titulos de cada item de MapPage
 hacer imagenes de proximamente
 logos
+posible sección de comentarios
