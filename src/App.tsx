@@ -2,6 +2,7 @@ import { ThemeProvider } from "@emotion/react";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Footer from "./Components/Footer/Footer";
 import NavBar from "./Components/NavBar/NavBar";
 import GamePage from "./Pages/GamePage";
 import Home from "./Pages/Home";
@@ -32,6 +33,7 @@ function App() {
             /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     </>
