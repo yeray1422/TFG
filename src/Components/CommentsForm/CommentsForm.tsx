@@ -3,6 +3,7 @@ import {
   Card,
   CardContent,
   CardHeader,
+  CircularProgress,
   TextField,
   Typography,
 } from "@mui/material";
@@ -18,10 +19,12 @@ const CommentsForm = () => {
   const [formIsValid, setFormIsValid] = useState(true);
   const [formSubmited, setFormSubmited] = useState(false);
   const [formNotSubmited, setFormNotSubmited] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
 
+    setIsLoading(true);
     setFormIsValid(true);
 
     if (!commentField) {
@@ -35,7 +38,7 @@ const CommentsForm = () => {
       comment: commentField,
     };
 
-    postComment(comment, setFormSubmited, setFormNotSubmited);
+    postComment(comment, setFormSubmited, setFormNotSubmited, setIsLoading);
   };
 
   return (
@@ -71,6 +74,7 @@ const CommentsForm = () => {
               <Button color="info" type="submit">
                 Enviar
               </Button>
+              {isLoading && <CircularProgress color="info" />}
             </div>
           </form>
         </CardContent>

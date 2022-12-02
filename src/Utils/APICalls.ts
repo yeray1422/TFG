@@ -62,7 +62,8 @@ const getMapItems = async (
 const postComment = async (
   comment: Comments,
   setFormSubmited: React.Dispatch<React.SetStateAction<boolean>>,
-  setFormNotSubmited: React.Dispatch<React.SetStateAction<boolean>>
+  setFormNotSubmited: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   await axios
     .post(`${constants.BASE_URL}comments`, comment, {
@@ -70,8 +71,14 @@ const postComment = async (
         apikey: constants.APIKEY,
       },
     })
-    .then(() => setFormSubmited(true))
-    .catch(() => setFormNotSubmited(true));
+    .then(() => {
+      setFormSubmited(true);
+      setIsLoading(false);
+    })
+    .catch(() => {
+      setFormNotSubmited(true)
+      setIsLoading(false);
+    });
 };
 
 export { getPageLogo, getCardsArray, getMapItems, postComment };
