@@ -59,15 +59,19 @@ const getMapItems = async (
     });
 };
 
-const postComment = async (comment: Comments) => {
+const postComment = async (
+  comment: Comments,
+  setFormSubmited: React.Dispatch<React.SetStateAction<boolean>>,
+  setFormNotSubmited: React.Dispatch<React.SetStateAction<boolean>>
+) => {
   await axios
-    .post(constants.BASE_URL, comment, {
+    .post(`${constants.BASE_URL}comments`, comment, {
       headers: {
         apikey: constants.APIKEY,
       },
     })
-    .then(() => console.log("posted correctly"))
-    .catch(console.log);
+    .then(() => setFormSubmited(true))
+    .catch(() => setFormNotSubmited(true));
 };
 
 export { getPageLogo, getCardsArray, getMapItems, postComment };
