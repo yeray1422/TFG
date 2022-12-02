@@ -29,6 +29,7 @@ const CommentsForm = () => {
 
     if (!commentField) {
       setFormIsValid(false);
+      setIsLoading(false);
       return;
     }
 
