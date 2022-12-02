@@ -1,4 +1,5 @@
 import axios from "axios";
+import Comments from "../Models/Comments";
 import MapItem from "../Models/MapItem";
 import PageItem from "../Models/PageItem";
 import PageLogos from "../Models/PageLogos";
@@ -58,4 +59,15 @@ const getMapItems = async (
     });
 };
 
-export { getPageLogo, getCardsArray, getMapItems };
+const postComment = async (comment: Comments) => {
+  await axios
+    .post(constants.BASE_URL, comment, {
+      headers: {
+        apikey: constants.APIKEY,
+      },
+    })
+    .then(() => console.log("posted correctly"))
+    .catch(console.log);
+};
+
+export { getPageLogo, getCardsArray, getMapItems, postComment };

@@ -1,5 +1,6 @@
 import { Grid, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import CommentsForm from "../Components/CommentsForm/CommentsForm";
 // import News from "../Components/News";
 import PageItemTemplate from "../Components/PageItem/PageItemTemplate";
 import PageItem from "../Models/PageItem";
@@ -41,7 +42,7 @@ const Home = () => {
           </Grid>
         ))}
       </Grid>
-      {/* <News /> */}
+      <CommentsForm />
     </>
   );
 };
