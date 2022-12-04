@@ -1,3 +1,10 @@
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .paper {
   background-color: #454545;
   border-radius: 12px;

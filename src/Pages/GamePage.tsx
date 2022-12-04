@@ -17,6 +17,8 @@ const GamePage = () => {
   const [gamePageCardsArray, setGamePageCardsArray] = useState<Array<PageItem>>(
     []
   );
+  const [isLoading, setIsLoading] = useState(false);
+
   const location = useLocation();
 
   const getUrlPageName: () => string = () => {
@@ -27,8 +29,10 @@ const GamePage = () => {
   };
 
   useEffect(() => {
-    getPageLogo(getUrlPageName(), setPageLogo);
-    getCardsArray(getUrlPageName(), setGamePageCardsArray);
+    setIsLoading(true);
+
+    getPageLogo(getUrlPageName(), setPageLogo, setIsLoading);
+    getCardsArray(getUrlPageName(), setGamePageCardsArray, setIsLoading);
   }, [location.pathname]);
 
   return (

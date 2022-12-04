@@ -7,7 +7,8 @@ import constants from "./Constants";
 
 const getPageLogo = async (
   page: string,
-  setPageLogo: React.Dispatch<React.SetStateAction<PageLogos>>
+  setPageLogo: React.Dispatch<React.SetStateAction<PageLogos>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   await axios
     .get(`${constants.BASE_URL}logos`, {
@@ -18,16 +19,21 @@ const getPageLogo = async (
         apikey: constants.APIKEY,
       },
     })
-    .then((res) => setPageLogo(res.data[0]))
+    .then((res) => {
+      setPageLogo(res.data[0]);
+      setIsLoading(false);
+    })
     .catch((e) => {
       setPageLogo(constants.PAGE_LOGOS_INITIAL_STATE);
+      setIsLoading(false);
       console.log(e);
     });
 };
 
 const getCardsArray = async (
   endpoint: string,
-  setCardsArray: React.Dispatch<React.SetStateAction<PageItem[]>>
+  setCardsArray: React.Dispatch<React.SetStateAction<PageItem[]>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   await axios
     .get(`${constants.BASE_URL}${endpoint}`, {
@@ -35,9 +41,13 @@ const getCardsArray = async (
         apikey: constants.APIKEY,
       },
     })
-    .then((res) => setCardsArray(res.data))
+    .then((res) => {
+      setCardsArray(res.data);
+      setIsLoading(false);
+    })
     .catch((e) => {
       setCardsArray([]);
+      setIsLoading(false);
       console.log(e);
     });
 };
@@ -76,7 +86,7 @@ const postComment = async (
       setIsLoading(false);
     })
     .catch(() => {
-      setFormNotSubmited(true)
+      setFormNotSubmited(true);
       setIsLoading(false);
     });
 };
