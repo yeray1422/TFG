@@ -1,3 +1,10 @@
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .paper {
   background-color: #454545;
   border-radius: 12px;
@@ -23,4 +30,9 @@
   font-size: 1rem;
   text-align: center;
   color: #fff;
+}
+
+.pages-item-list {
+  margin-top: 15px !important;
+  margin-bottom: 34px;
 }

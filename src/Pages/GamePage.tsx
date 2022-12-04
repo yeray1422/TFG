@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Grid, Stack } from "@mui/material";
+import { CircularProgress, Grid, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PageItemTemplate from "../Components/PageItem/PageItemTemplate";
@@ -8,7 +8,7 @@ import PageLogos from "../Models/PageLogos";
 import { getCardsArray, getPageLogo } from "../Utils/APICalls";
 import constants from "../Utils/Constants";
 
-import "./GamePage.css";
+import styles from "./GamePage.module.css";
 
 const pageLogoInitialState: PageLogos = constants.PAGE_LOGOS_INITIAL_STATE;
 
@@ -37,25 +37,34 @@ const GamePage = () => {
 
   return (
     <>
-      <Stack justifyContent="center" alignItems="center" className="paper">
-        <img src={pageLogo.logo} alt="" className="pages-logo" />
-        <div className="pages-subtitle">
-          <p>{pageLogo.description}</p>
+      {isLoading && (
+        <div className={styles.loading}>
+          <CircularProgress color="info" />
         </div>
-      </Stack>
-      <Grid
-        container
-        columnSpacing={1}
-        rowSpacing={1}
-        columns={{ xs: 3, sm: 6, md: 9 }}
-        className="pages-item-list"
-      >
-        {gamePageCardsArray.map((pageItem) => (
-          <Grid item key={pageItem.id} xs={3}>
-            <PageItemTemplate pageItem={pageItem} />
+      )}
+      {!isLoading && (
+        <>
+          <Stack justifyContent="center" alignItems="center" className={styles.paper}>
+            <img src={pageLogo.logo} alt="" className={styles["pages-logo"]} />
+            <div className={styles["pages-subtitle"]}>
+              <p>{pageLogo.description}</p>
+            </div>
+          </Stack>
+          <Grid
+            container
+            columnSpacing={1}
+            rowSpacing={1}
+            columns={{ xs: 3, sm: 6, md: 9 }}
+            className={styles["pages-item-list"]}
+          >
+            {gamePageCardsArray.map((pageItem) => (
+              <Grid item key={pageItem.id} xs={3}>
+                <PageItemTemplate pageItem={pageItem} />
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        </>
+      )}
     </>
   );
 };
