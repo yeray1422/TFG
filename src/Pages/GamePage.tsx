@@ -17,7 +17,7 @@ const GamePage = () => {
   const [gamePageCardsArray, setGamePageCardsArray] = useState<Array<PageItem>>(
     []
   );
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const location = useLocation();
 

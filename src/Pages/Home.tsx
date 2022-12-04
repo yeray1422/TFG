@@ -14,7 +14,7 @@ const pageLogosInitialState: PageLogos = constants.PAGE_LOGOS_INITIAL_STATE;
 const Home = () => {
   const [pageLogo, setPageLogo] = useState(pageLogosInitialState);
   const [homeCardsArray, setHomeCardsArray] = useState<PageItem[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);

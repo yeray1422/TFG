@@ -54,7 +54,8 @@ const getCardsArray = async (
 
 const getMapItems = async (
   endpoint: string,
-  setMapItems: React.Dispatch<React.SetStateAction<MapItem[]>>
+  setMapItems: React.Dispatch<React.SetStateAction<MapItem[]>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   await axios
     .get(`${constants.BASE_URL}${endpoint}`, {
@@ -62,9 +63,13 @@ const getMapItems = async (
         apikey: constants.APIKEY,
       },
     })
-    .then((res) => setMapItems(res.data))
+    .then((res) => {
+      setMapItems(res.data);
+      setIsLoading(false);
+    })
     .catch((e) => {
       setMapItems([]);
+      setIsLoading(false);
       console.log(e);
     });
 };
