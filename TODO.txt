@@ -4,3 +4,4 @@ logos
 posible sección de comentarios
 estilos commentsform
 alert dialog error
+añadir tooltips a los botones
