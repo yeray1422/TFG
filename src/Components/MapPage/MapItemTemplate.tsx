@@ -6,6 +6,7 @@ import {
   CardMedia,
   Divider,
   IconButton,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -41,13 +42,15 @@ const MapItemTemplate = (props: MapItemProps) => {
     <Card className={styles["map-item-card"]}>
       <CardMedia component="div" className={styles["map-item-images"]}>
         <div>
-          <IconButton
-            onClick={handleLeftButtonClick}
-            className={styles["left-arrow"]}
-            disabled={values.length <= 1}
-          >
-            <KeyboardArrowLeft />
-          </IconButton>
+          <Tooltip title="Anterior" arrow>
+            <IconButton
+              onClick={handleLeftButtonClick}
+              className={styles["left-arrow"]}
+              disabled={values.length <= 1}
+            >
+              <KeyboardArrowLeft />
+            </IconButton>
+          </Tooltip>
         </div>
         <div>
           <img
@@ -57,13 +60,15 @@ const MapItemTemplate = (props: MapItemProps) => {
           />
         </div>
         <div>
-          <IconButton
-            onClick={handleRightButtonClick}
-            className={styles["right-arrow"]}
-            disabled={values.length <= 1}
-          >
-            <KeyboardArrowRight />
-          </IconButton>
+          <Tooltip title="Siguiente" arrow>
+            <IconButton
+              onClick={handleRightButtonClick}
+              className={styles["right-arrow"]}
+              disabled={values.length <= 1}
+            >
+              <KeyboardArrowRight />
+            </IconButton>
+          </Tooltip>
         </div>
       </CardMedia>
       <CardContent>

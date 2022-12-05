@@ -5,6 +5,7 @@ import {
   Collapse,
   Divider,
   IconButton,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -37,9 +38,11 @@ const MapItems = (props: MapItemsProps) => {
           justifyContent="space-between"
         >
           <CardHeader id={props.item.name} title={props.item.name} />
+          <Tooltip title={openCard ? "Ocultar" : "Expandir"} arrow>
           <IconButton onClick={openCardHandler}>
             {openCard ? <ExpandLess /> : <ExpandMore />}
           </IconButton>
+          </Tooltip>
         </Stack>
         <Divider variant="middle" />
         <CardContent>

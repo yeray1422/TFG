@@ -8,6 +8,7 @@ import {
   ListItemIcon,
   ListItemText,
   ListSubheader,
+  Tooltip,
 } from "@mui/material";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
@@ -49,7 +50,9 @@ const MapPageIndex = (props: MapPageItemsProps) => {
               </span>
             </ListItemIcon>
             <ListItemText primary="Objetos construibles" />
-            {openConstruibles ? <ExpandLess /> : <ExpandMore />}
+            <Tooltip title={openConstruibles ? "Ocultar" : "Expandir"} arrow>
+              {openConstruibles ? <ExpandLess /> : <ExpandMore />}
+            </Tooltip>
           </ListItemButton>
           <Collapse in={openConstruibles}>
             <p className="note">
@@ -58,16 +61,18 @@ const MapPageIndex = (props: MapPageItemsProps) => {
             </p>
             <List component="div">
               {construibles.map((construible) => (
-                <ListItemButton key={construible.id} sx={{ pl: 6 }}>
-                  <ListItemIcon>
-                    <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
-                      {getEmoji(construible.emoji)}
-                    </span>
-                  </ListItemIcon>
-                  <Link href={`#${construible.name}`}>
-                    <ListItemText primary={construible.name} />
-                  </Link>
-                </ListItemButton>
+                <Tooltip title={`Ir a ${construible.name}`} arrow>
+                  <ListItemButton key={construible.id} sx={{ pl: 6 }}>
+                    <ListItemIcon>
+                      <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+                        {getEmoji(construible.emoji)}
+                      </span>
+                    </ListItemIcon>
+                    <Link href={`#${construible.name}`}>
+                      <ListItemText primary={construible.name} />
+                    </Link>
+                  </ListItemButton>
+                </Tooltip>
               ))}
             </List>
           </Collapse>
@@ -82,21 +87,25 @@ const MapPageIndex = (props: MapPageItemsProps) => {
               </span>
             </ListItemIcon>
             <ListItemText primary="Guía Easter Egg" />
-            {openEasterEgg ? <ExpandLess /> : <ExpandMore />}
+            <Tooltip title={openEasterEgg ? "Ocultar" : "Expandir"} arrow>
+              {openEasterEgg ? <ExpandLess /> : <ExpandMore />}
+            </Tooltip>
           </ListItemButton>
           <Collapse in={openEasterEgg}>
             <List component="div">
               {easterEgg.map((step) => (
-                <ListItemButton key={step.id} sx={{ pl: 6 }}>
-                  <ListItemIcon>
-                    <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
-                      {getEmoji(step.emoji)}
-                    </span>
-                  </ListItemIcon>
-                  <Link href={`#${step.name}`}>
-                    <ListItemText primary={step.name} />
-                  </Link>
-                </ListItemButton>
+                <Tooltip title={`Ir a ${step.name}`} arrow>
+                  <ListItemButton key={step.id} sx={{ pl: 6 }}>
+                    <ListItemIcon>
+                      <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+                        {getEmoji(step.emoji)}
+                      </span>
+                    </ListItemIcon>
+                    <Link href={`#${step.name}`}>
+                      <ListItemText primary={step.name} />
+                    </Link>
+                  </ListItemButton>
+                </Tooltip>
               ))}
             </List>
           </Collapse>
@@ -111,21 +120,25 @@ const MapPageIndex = (props: MapPageItemsProps) => {
               </span>
             </ListItemIcon>
             <ListItemText primary="Easter Eggs Secundarios" />
-            {openEasterEgg2 ? <ExpandLess /> : <ExpandMore />}
+            <Tooltip title={openEasterEgg2 ? "Ocultar" : "Expandir"} arrow>
+              {openEasterEgg2 ? <ExpandLess /> : <ExpandMore />}
+            </Tooltip>
           </ListItemButton>
           <Collapse in={openEasterEgg2}>
             <List component="div">
               {easterEgg2.map((secund) => (
-                <ListItemButton key={secund.id} sx={{ pl: 6 }}>
-                  <ListItemIcon>
-                    <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
-                      {getEmoji(secund.emoji)}
-                    </span>
-                  </ListItemIcon>
-                  <Link href={`#${secund.name}`}>
-                    <ListItemText primary={secund.name} />
-                  </Link>
-                </ListItemButton>
+                <Tooltip title={`Ir a ${secund.name}`} arrow>
+                  <ListItemButton key={secund.id} sx={{ pl: 6 }}>
+                    <ListItemIcon>
+                      <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+                        {getEmoji(secund.emoji)}
+                      </span>
+                    </ListItemIcon>
+                    <Link href={`#${secund.name}`}>
+                      <ListItemText primary={secund.name} />
+                    </Link>
+                  </ListItemButton>
+                </Tooltip>
               ))}
             </List>
           </Collapse>

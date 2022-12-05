@@ -8,6 +8,7 @@ import {
   MenuItem,
   Autocomplete,
   TextField,
+  Tooltip,
 } from "@mui/material";
 import { ArrowBack, Search } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -51,9 +52,11 @@ const SearchInput = (props: SearchInputProps) => {
       spacing={2}
       width="100%"
     >
-      <IconButton onClick={props.toggle}>
-        <ArrowBack />
-      </IconButton>
+      <Tooltip title="Ocultar barra de búsqueda">
+        <IconButton onClick={props.toggle}>
+          <ArrowBack />
+        </IconButton>
+      </Tooltip>
       <Autocomplete
         options={SearchOptionsArray}
         renderInput={(params) => (
@@ -64,6 +67,7 @@ const SearchInput = (props: SearchInputProps) => {
         freeSolo
         fullWidth
         onKeyDown={confirmOption}
+        clearText="Borrar"
       />
     </Stack>
   );
@@ -95,12 +99,16 @@ const NavBar = () => {
                   <span>Zombies Easter Eggs</span>
                 </Link>
               </Typography>
-              <IconButton onClick={toggleSearchInputHandler}>
-                <Search />
-              </IconButton>
-              <IconButton onClick={toggleMenuHandler} className="menu-icon">
-                <MenuIcon />
-              </IconButton>
+              <Tooltip title="Buscar">
+                <IconButton onClick={toggleSearchInputHandler}>
+                  <Search />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={isMenuOpen ? "Ocultar Menú" : "Desplegar Menú"}>
+                <IconButton onClick={toggleMenuHandler} className="menu-icon">
+                  <MenuIcon />
+                </IconButton>
+              </Tooltip>
             </>
           )}
           {isSearchInputOpen && (
