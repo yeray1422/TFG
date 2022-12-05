@@ -8,7 +8,8 @@ import constants from "./Constants";
 const getPageLogo = async (
   page: string,
   setPageLogo: React.Dispatch<React.SetStateAction<PageLogos>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setLoadingError: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   await axios
     .get(`${constants.BASE_URL}logos`, {
@@ -25,6 +26,7 @@ const getPageLogo = async (
     })
     .catch((e) => {
       setPageLogo(constants.PAGE_LOGOS_INITIAL_STATE);
+      setLoadingError(true);
       setIsLoading(false);
       console.log(e);
     });
@@ -33,7 +35,8 @@ const getPageLogo = async (
 const getCardsArray = async (
   endpoint: string,
   setCardsArray: React.Dispatch<React.SetStateAction<PageItem[]>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setLoadingError: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   await axios
     .get(`${constants.BASE_URL}${endpoint}`, {
@@ -47,6 +50,7 @@ const getCardsArray = async (
     })
     .catch((e) => {
       setCardsArray([]);
+      setLoadingError(true);
       setIsLoading(false);
       console.log(e);
     });
@@ -55,7 +59,8 @@ const getCardsArray = async (
 const getMapItems = async (
   endpoint: string,
   setMapItems: React.Dispatch<React.SetStateAction<MapItem[]>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setLoadingError: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   await axios
     .get(`${constants.BASE_URL}${endpoint}`, {
@@ -69,6 +74,7 @@ const getMapItems = async (
     })
     .catch((e) => {
       setMapItems([]);
+      setLoadingError(true);
       setIsLoading(false);
       console.log(e);
     });

@@ -2,6 +2,7 @@ import { CircularProgress, Grid, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import CommentsForm from "../Components/CommentsForm/CommentsForm";
 import PageItemTemplate from "../Components/PageItem/PageItemTemplate";
+import AlertDialog from "../Components/UI/AlertDialog";
 import PageItem from "../Models/PageItem";
 import PageLogos from "../Models/PageLogos";
 import { getCardsArray, getPageLogo } from "../Utils/APICalls";
@@ -15,12 +16,19 @@ const Home = () => {
   const [pageLogo, setPageLogo] = useState(pageLogosInitialState);
   const [homeCardsArray, setHomeCardsArray] = useState<PageItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingError, setLoadingError] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
 
-    getPageLogo("home", setPageLogo, setIsLoading);
-    getCardsArray("home-cards", setHomeCardsArray, setIsLoading);
+    getPageLogo("home", setPageLogo, setIsLoading, setLoadingError);
+    getCardsArray(
+      "home-cards",
+      setHomeCardsArray,
+      setIsLoading,
+      setLoadingError
+    );
+    
   }, []);
 
   return (
@@ -56,6 +64,12 @@ const Home = () => {
             ))}
           </Grid>
           <CommentsForm />
+          <AlertDialog
+            open={loadingError}
+            title="Algo ha ido mal..."
+            message="Si el problema persiste, inténtelo de nuevo más tarde"
+            accept={() => setLoadingError(false)}
+          />
         </>
       )}
     </>

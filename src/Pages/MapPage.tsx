@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import MapItems from "../Components/MapPage/MapItems";
 import MapPageIndex from "../Components/MapPage/MapPageIndex";
+import AlertDialog from "../Components/UI/AlertDialog";
 import MapItem from "../Models/MapItem";
 import { getMapItems } from "../Utils/APICalls";
 
@@ -12,6 +13,7 @@ import styles from "./MapPage.module.css";
 const MapPage = () => {
   const [items, setItems] = useState<MapItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingError, setLoadingError] = useState(false);
 
   const location = useLocation();
 
@@ -25,7 +27,7 @@ const MapPage = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    getMapItems(getUrlPageName(), setItems, setIsLoading);
+    getMapItems(getUrlPageName(), setItems, setIsLoading, setLoadingError);
   }, []);
 
   return (
@@ -41,6 +43,12 @@ const MapPage = () => {
           {items.map((item) => {
             return <MapItems key={item.id} item={item} />;
           })}
+          <AlertDialog
+            open={loadingError}
+            title="Algo ha ido mal..."
+            message="Si el problema persiste, inténtelo de nuevo más tarde"
+            accept={() => setLoadingError(false)}
+          />
         </>
       )}
     </>

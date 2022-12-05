@@ -3,6 +3,7 @@ import { CircularProgress, Grid, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PageItemTemplate from "../Components/PageItem/PageItemTemplate";
+import AlertDialog from "../Components/UI/AlertDialog";
 import PageItem from "../Models/PageItem";
 import PageLogos from "../Models/PageLogos";
 import { getCardsArray, getPageLogo } from "../Utils/APICalls";
@@ -18,6 +19,7 @@ const GamePage = () => {
     []
   );
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingError, setLoadingError] = useState(false);
 
   const location = useLocation();
 
@@ -31,8 +33,13 @@ const GamePage = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    getPageLogo(getUrlPageName(), setPageLogo, setIsLoading);
-    getCardsArray(getUrlPageName(), setGamePageCardsArray, setIsLoading);
+    getPageLogo(getUrlPageName(), setPageLogo, setIsLoading, setLoadingError);
+    getCardsArray(
+      getUrlPageName(),
+      setGamePageCardsArray,
+      setIsLoading,
+      setLoadingError
+    );
   }, [location.pathname]);
 
   return (
@@ -44,7 +51,11 @@ const GamePage = () => {
       )}
       {!isLoading && (
         <>
-          <Stack justifyContent="center" alignItems="center" className={styles.paper}>
+          <Stack
+            justifyContent="center"
+            alignItems="center"
+            className={styles.paper}
+          >
             <img src={pageLogo.logo} alt="" className={styles["pages-logo"]} />
             <div className={styles["pages-subtitle"]}>
               <p>{pageLogo.description}</p>
@@ -63,6 +74,12 @@ const GamePage = () => {
               </Grid>
             ))}
           </Grid>
+          <AlertDialog
+            open={loadingError}
+            title="Algo ha ido mal..."
+            message="Si el problema persiste, inténtelo de nuevo más tarde"
+            accept={() => setLoadingError(false)}
+          />
         </>
       )}
     </>
