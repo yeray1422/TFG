@@ -14,7 +14,7 @@ import { ArrowBack, Search } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
-import stls from "./NavBar.module.css";
+import styles from "./NavBar.module.css";
 import constants from "../../Utils/Constants";
 import SearchOptions from "../../Utils/SearchOptions";
 
@@ -90,12 +90,12 @@ const NavBar = () => {
 
   return (
     <AppBar position="fixed">
-      <Stack className={stls["nav-bar"]}>
+      <Stack className={styles["nav-bar"]}>
         <Toolbar>
           {!isSearchInputOpen && (
             <>
-              <Typography variant="h5" component="div" className={stls.typography}>
-                <Link to="/" className={stls["toolbar-title"]}>
+              <Typography variant="h5" component="div" className={styles.typography}>
+                <Link to="/" className={styles["toolbar-title"]}>
                   <span>Zombies Easter Eggs</span>
                 </Link>
               </Typography>
@@ -107,7 +107,7 @@ const NavBar = () => {
               <Tooltip title={isMenuOpen ? "Ocultar Menú" : "Desplegar Menú"}>
                 <IconButton
                   onClick={toggleMenuHandler}
-                  className={stls["menu-icon"]}
+                  className={styles["menu-icon"]}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -119,49 +119,49 @@ const NavBar = () => {
           )}
         </Toolbar>
         <div
-          className={`${stls["menu-item-list"]} ${
-            stls[!isMenuOpen ? "hide-menu-item-list" : "show-menu-item-list"]
+          className={`${styles["menu-item-list"]} ${
+            styles[!isMenuOpen ? "hide-menu-item-list" : "show-menu-item-list"]
           }`}
         >
-          <MenuItem className={stls["menu-item"]}>
+          <MenuItem className={styles["menu-item"]}>
             <NavLink
-              className={`${stls["menu-item-link"]} ${(props: any) =>
+              className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_PAGE}`}
             >
               Black Ops
             </NavLink>
           </MenuItem>
-          <MenuItem className={stls["menu-item"]}>
+          <MenuItem className={styles["menu-item"]}>
             <NavLink
-              className={`${stls["menu-item-link"]} ${(props: any) =>
+              className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_II_PAGE}`}
             >
               Black Ops II
             </NavLink>
           </MenuItem>
-          <MenuItem className={stls["menu-item"]}>
+          <MenuItem className={styles["menu-item"]}>
             <NavLink
-              className={`${stls["menu-item-link"]} ${(props: any) =>
+              className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_III.PAGE}`}
             >
               Black Ops III
             </NavLink>
           </MenuItem>
-          <MenuItem className={stls["menu-item"]}>
+          <MenuItem className={styles["menu-item"]}>
             <NavLink
-              className={`${stls["menu-item-link"]} ${(props: any) =>
+              className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_4_PAGE}`}
             >
               Black Ops 4
             </NavLink>
           </MenuItem>
-          <MenuItem className={stls["menu-item"]}>
+          <MenuItem className={styles["menu-item"]}>
             <NavLink
-              className={`${stls["menu-item-link"]} ${(props: any) =>
+              className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_COLD_WAR_PAGE}`}
             >

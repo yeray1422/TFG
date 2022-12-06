@@ -13,6 +13,8 @@ import Comments from "../../Models/Comments";
 import { postComment } from "../../Utils/APICalls";
 import AlertDialog from "../UI/AlertDialog";
 
+import styles from "./CommentsForm.module.css";
+
 const CommentsForm = () => {
   const [nameField, setNameField] = useState("");
   const [commentField, setCommentField] = useState("");
@@ -40,14 +42,20 @@ const CommentsForm = () => {
     };
 
     postComment(comment, setFormSubmited, setFormNotSubmited, setIsLoading);
+    setNameField("");
+    setCommentField("");
   };
 
   return (
     <>
-      <Card sx={{ m: "0 1rem 1rem 1rem" }}>
+      <Card className={styles.card}>
         <CardHeader title="Añade tus comentarios" />
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            textAlign="justify"
+          >
             En esta sección podrás añadir de forma anónima cualquier comentario,
             errores que encuentres en la aplicación y/o posibles mejoras
           </Typography>
@@ -59,6 +67,7 @@ const CommentsForm = () => {
                 maxRows={2}
                 value={nameField}
                 onChange={(e) => setNameField(e.target.value)}
+                className={styles.textField}
               />
             </div>
             <div>
@@ -69,9 +78,10 @@ const CommentsForm = () => {
                 rows={6}
                 value={commentField}
                 onChange={(e) => setCommentField(e.target.value)}
+                className={styles.textField}
               />
             </div>
-            <div>
+            <div className={styles.actions}>
               <Button color="info" type="submit">
                 Enviar
               </Button>

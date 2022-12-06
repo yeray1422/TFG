@@ -1,0 +1,17 @@
+.card {
+  margin: 0 1rem 1rem;
+}
+
+.textField {
+  margin: 1rem 0 !important;
+  width: 100%;
+  max-width: 40rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  max-width: 40rem;
+  align-items: center;
+  height: 2.5rem;
+}
