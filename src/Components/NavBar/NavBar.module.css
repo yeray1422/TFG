@@ -73,18 +73,18 @@
 
 @media screen and (min-width: 600px) {
   .show-menu-item-list {
-    top: 86px;
+    top: 85px;
   }
 }
 
 @media screen and (min-width: 840px) {
   .menu-item-list {
-    top: 86px;
+    top: 85px;
     flex-direction: row;
     justify-content: space-between;
   }
 
   .menu-icon {
-    display: none !important;
+    display: none;
   }
 }
