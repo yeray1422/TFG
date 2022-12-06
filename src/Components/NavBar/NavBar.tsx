@@ -94,10 +94,16 @@ const NavBar = () => {
         <Toolbar>
           {!isSearchInputOpen && (
             <>
-              <Typography variant="h5" component="div" className={styles.typography}>
-                <Link to="/" className={styles["toolbar-title"]}>
-                  <span>Zombies Easter Eggs</span>
-                </Link>
+              <Typography
+                variant="h5"
+                component="div"
+                className={styles.typography}
+              >
+                <Tooltip title="Ir a inicio" arrow>
+                  <Link to="/" className={styles["toolbar-title"]}>
+                    <span>Zombies Easter Eggs</span>
+                  </Link>
+                </Tooltip>
               </Typography>
               <Tooltip title="Buscar">
                 <IconButton onClick={toggleSearchInputHandler}>
@@ -123,56 +129,66 @@ const NavBar = () => {
             styles[!isMenuOpen ? "hide-menu-item-list" : "show-menu-item-list"]
           }`}
         >
-          <MenuItem className={styles["menu-item"]}>
-            <NavLink
-              className={`${styles["menu-item-link"]} ${(props: any) =>
-                props.isActive ? "active" : ""}`}
-              to={`/${constants.BLACK_OPS_PAGE}`}
-              onClick={toggleMenuHandler}
-            >
-              Black Ops
-            </NavLink>
-          </MenuItem>
-          <MenuItem className={styles["menu-item"]}>
-            <NavLink
-              className={`${styles["menu-item-link"]} ${(props: any) =>
-                props.isActive ? "active" : ""}`}
-              to={`/${constants.BLACK_OPS_II_PAGE}`}
-              onClick={toggleMenuHandler}
-            >
-              Black Ops II
-            </NavLink>
-          </MenuItem>
-          <MenuItem className={styles["menu-item"]}>
-            <NavLink
-              className={`${styles["menu-item-link"]} ${(props: any) =>
-                props.isActive ? "active" : ""}`}
-              to={`/${constants.BLACK_OPS_III.PAGE}`}
-              onClick={toggleMenuHandler}
-            >
-              Black Ops III
-            </NavLink>
-          </MenuItem>
-          <MenuItem className={styles["menu-item"]}>
-            <NavLink
-              className={`${styles["menu-item-link"]} ${(props: any) =>
-                props.isActive ? "active" : ""}`}
-              to={`/${constants.BLACK_OPS_4_PAGE}`}
-              onClick={toggleMenuHandler}
-            >
-              Black Ops 4
-            </NavLink>
-          </MenuItem>
-          <MenuItem className={styles["menu-item"]}>
-            <NavLink
-              className={`${styles["menu-item-link"]} ${(props: any) =>
-                props.isActive ? "active" : ""}`}
-              to={`/${constants.BLACK_OPS_COLD_WAR_PAGE}`}
-              onClick={toggleMenuHandler}
-            >
-              Cold War
-            </NavLink>
-          </MenuItem>
+          <Tooltip title="Ir a Black Ops" arrow>
+            <MenuItem className={styles["menu-item"]}>
+              <NavLink
+                className={`${styles["menu-item-link"]} ${(props: any) =>
+                  props.isActive ? "active" : ""}`}
+                to={`/${constants.BLACK_OPS_PAGE}`}
+                onClick={toggleMenuHandler}
+              >
+                Black Ops
+              </NavLink>
+            </MenuItem>
+          </Tooltip>
+          <Tooltip title="Ir a Black Ops II" arrow>
+            <MenuItem className={styles["menu-item"]}>
+              <NavLink
+                className={`${styles["menu-item-link"]} ${(props: any) =>
+                  props.isActive ? "active" : ""}`}
+                to={`/${constants.BLACK_OPS_II_PAGE}`}
+                onClick={toggleMenuHandler}
+              >
+                Black Ops II
+              </NavLink>
+            </MenuItem>
+          </Tooltip>
+          <Tooltip title="Ir a Black Ops III" arrow>
+            <MenuItem className={styles["menu-item"]}>
+              <NavLink
+                className={`${styles["menu-item-link"]} ${(props: any) =>
+                  props.isActive ? "active" : ""}`}
+                to={`/${constants.BLACK_OPS_III.PAGE}`}
+                onClick={toggleMenuHandler}
+              >
+                Black Ops III
+              </NavLink>
+            </MenuItem>
+          </Tooltip>
+          <Tooltip title="Ir a Black Ops 4" arrow>
+            <MenuItem className={styles["menu-item"]}>
+              <NavLink
+                className={`${styles["menu-item-link"]} ${(props: any) =>
+                  props.isActive ? "active" : ""}`}
+                to={`/${constants.BLACK_OPS_4_PAGE}`}
+                onClick={toggleMenuHandler}
+              >
+                Black Ops 4
+              </NavLink>
+            </MenuItem>
+          </Tooltip>
+          <Tooltip title="Ir a Cold War" arrow>
+            <MenuItem className={styles["menu-item"]}>
+              <NavLink
+                className={`${styles["menu-item-link"]} ${(props: any) =>
+                  props.isActive ? "active" : ""}`}
+                to={`/${constants.BLACK_OPS_COLD_WAR_PAGE}`}
+                onClick={toggleMenuHandler}
+              >
+                Cold War
+              </NavLink>
+            </MenuItem>
+          </Tooltip>
         </div>
       </Stack>
     </AppBar>
