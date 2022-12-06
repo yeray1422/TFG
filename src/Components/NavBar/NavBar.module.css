@@ -1,6 +1,9 @@
 .nav-bar {
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
+  padding: 0.7rem 0;
+}
+
+.typography {
+  flex-grow: 1 !important;
 }
 
 .toolbar-title,
@@ -32,12 +35,6 @@
   width: 100%;
   text-align: center;
   font-size: 1.1rem;
-}
-
-.menu-item-link.active {
-  background-color: white;
-  color: #272727;
-  border-color: #272727;
 }
 
 .menu-item-link:hover {

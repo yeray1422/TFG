@@ -8,3 +8,9 @@ body {
   color: white;
   font-family: "Roboto", sans-serif;
 }
+
+.active {
+  background-color: white !important; 
+  color: #272727 !important;
+  border-color: #272727 !important;
+}
