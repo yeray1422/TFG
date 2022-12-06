@@ -128,6 +128,7 @@ const NavBar = () => {
               className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_PAGE}`}
+              onClick={toggleMenuHandler}
             >
               Black Ops
             </NavLink>
@@ -137,6 +138,7 @@ const NavBar = () => {
               className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_II_PAGE}`}
+              onClick={toggleMenuHandler}
             >
               Black Ops II
             </NavLink>
@@ -146,6 +148,7 @@ const NavBar = () => {
               className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_III.PAGE}`}
+              onClick={toggleMenuHandler}
             >
               Black Ops III
             </NavLink>
@@ -155,6 +158,7 @@ const NavBar = () => {
               className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_4_PAGE}`}
+              onClick={toggleMenuHandler}
             >
               Black Ops 4
             </NavLink>
@@ -164,6 +168,7 @@ const NavBar = () => {
               className={`${styles["menu-item-link"]} ${(props: any) =>
                 props.isActive ? "active" : ""}`}
               to={`/${constants.BLACK_OPS_COLD_WAR_PAGE}`}
+              onClick={toggleMenuHandler}
             >
               Cold War
             </NavLink>

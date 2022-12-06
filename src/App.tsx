@@ -19,7 +19,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path={constants.BLACK_OPS_PAGE} element={<GamePage />} /> */}
+            <Route path={constants.BLACK_OPS_PAGE} element={<GamePage />} />
             {/* <Route path={constants.BLACK_OPS_II_PAGE} element={<GamePage />} /> */}
             <Route path={constants.BLACK_OPS_III.PAGE} element={<GamePage />} />
             <Route

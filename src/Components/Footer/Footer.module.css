@@ -1,8 +1,30 @@
+.footer-container {
+  margin-top: 11rem;
+}
+
 .footer {
-  margin-bottom: 0;
-  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
 .footer p {
-  text-align: justify;
+  text-align: center;
+  margin: 1rem auto;
+  width: 95%;
+  max-width: 40rem;
+}
+
+@media screen and (min-width: 425px) {
+  .footer-container {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .footer-container {
+    margin-top: 9rem;
+  }
 }
