@@ -1,3 +1,65 @@
 .list {
   margin-top: 59px !important;
 }
+
+.list-title {
+  border-radius: 12px;
+}
+
+.note {
+  color: #029bf3;
+  padding: 0 1rem;
+}
+
+.list-item {
+  border-radius: 12px;
+  max-width: 40rem;
+}
+
+.list-item-icon {
+  font-size: 1.25rem;
+  margin-top: -5px;
+}
+
+.inner-list-item {
+  padding-left: 3rem !important;
+}
+
+.list-item-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  .list {
+    margin-top: 67px !important;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .list {
+    margin-top: 155px !important;
+  }
+
+  .list-item {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .list-title {
+    font-size: 1.25rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .list-item {
+    margin-left: 2rem;
+  }
+
+  .list-item span {
+    font-size: 1.25rem;
+  }
+}

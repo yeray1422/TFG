@@ -38,14 +38,15 @@ const MapPageIndex = (props: MapPageItemsProps) => {
 
   return (
     <List className={styles.list}>
-      <ListSubheader component="h2">ÍNDICE</ListSubheader>
+      <ListSubheader component="h2" className={styles["list-title"]}>ÍNDICE</ListSubheader>
       {construibles.length > 0 && (
         <>
           <ListItemButton
             onClick={() => setOpenConstruibles(!openConstruibles)}
+            className={styles["list-item"]}
           >
             <ListItemIcon>
-              <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+              <span className={styles["list-item-icon"]}>
                 {getEmoji("CONSTRUIBLES")}
               </span>
             </ListItemIcon>
@@ -55,20 +56,29 @@ const MapPageIndex = (props: MapPageItemsProps) => {
             </Tooltip>
           </ListItemButton>
           <Collapse in={openConstruibles}>
-            <p className="note">
+            <p className={styles.note}>
               *Nota: No todos los constuibles son necesarios para completar el
               easter egg, pero siempre ayudan.
             </p>
             <List component="div">
               {construibles.map((construible) => (
-                <Tooltip title={`Ir a ${construible.name}`} arrow>
-                  <ListItemButton key={construible.id} sx={{ pl: 6 }}>
-                    <ListItemIcon>
-                      <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
-                        {getEmoji(construible.emoji)}
-                      </span>
-                    </ListItemIcon>
-                    <Link href={`#${construible.name}`}>
+                <Tooltip
+                  title={`Ir a ${construible.name}`}
+                  arrow
+                  key={construible.id}
+                >
+                  <ListItemButton
+                    className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
+                  >
+                    <Link
+                      href={`#${construible.name}`}
+                      className={styles["list-item-link"]}
+                    >
+                      <ListItemIcon>
+                        <span className={styles["list-item-icon"]}>
+                          {getEmoji(construible.emoji)}
+                        </span>
+                      </ListItemIcon>
                       <ListItemText primary={construible.name} />
                     </Link>
                   </ListItemButton>
@@ -80,9 +90,12 @@ const MapPageIndex = (props: MapPageItemsProps) => {
       )}
       {easterEgg.length > 0 && (
         <>
-          <ListItemButton onClick={() => setOpenEasterEgg(!openEasterEgg)}>
+          <ListItemButton
+            onClick={() => setOpenEasterEgg(!openEasterEgg)}
+            className={styles["list-item"]}
+          >
             <ListItemIcon>
-              <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+              <span className={styles["list-item-icon"]}>
                 {getEmoji("EASTER_EGG")}
               </span>
             </ListItemIcon>
@@ -94,14 +107,19 @@ const MapPageIndex = (props: MapPageItemsProps) => {
           <Collapse in={openEasterEgg}>
             <List component="div">
               {easterEgg.map((step) => (
-                <Tooltip title={`Ir a ${step.name}`} arrow>
-                  <ListItemButton key={step.id} sx={{ pl: 6 }}>
-                    <ListItemIcon>
-                      <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
-                        {getEmoji(step.emoji)}
-                      </span>
-                    </ListItemIcon>
-                    <Link href={`#${step.name}`}>
+                <Tooltip title={`Ir a ${step.name}`} arrow key={step.id}>
+                  <ListItemButton
+                    className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
+                  >
+                    <Link
+                      href={`#${step.name}`}
+                      className={styles["list-item-link"]}
+                    >
+                      <ListItemIcon>
+                        <span className={styles["list-item-icon"]}>
+                          {getEmoji(step.emoji)}
+                        </span>
+                      </ListItemIcon>
                       <ListItemText primary={step.name} />
                     </Link>
                   </ListItemButton>
@@ -113,9 +131,12 @@ const MapPageIndex = (props: MapPageItemsProps) => {
       )}
       {easterEgg2.length > 0 && (
         <>
-          <ListItemButton onClick={() => setOpenEasterEgg2(!openEasterEgg2)}>
+          <ListItemButton
+            onClick={() => setOpenEasterEgg2(!openEasterEgg2)}
+            className={styles["list-item"]}
+          >
             <ListItemIcon>
-              <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
+              <span className={styles["list-item-icon"]}>
                 {getEmoji("EASTER_EGG2")}
               </span>
             </ListItemIcon>
@@ -127,14 +148,19 @@ const MapPageIndex = (props: MapPageItemsProps) => {
           <Collapse in={openEasterEgg2}>
             <List component="div">
               {easterEgg2.map((secund) => (
-                <Tooltip title={`Ir a ${secund.name}`} arrow>
-                  <ListItemButton key={secund.id} sx={{ pl: 6 }}>
-                    <ListItemIcon>
-                      <span style={{ fontSize: "1.25rem", marginTop: "-5px" }}>
-                        {getEmoji(secund.emoji)}
-                      </span>
-                    </ListItemIcon>
-                    <Link href={`#${secund.name}`}>
+                <Tooltip title={`Ir a ${secund.name}`} arrow key={secund.id}>
+                  <ListItemButton
+                    className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
+                  >
+                    <Link
+                      href={`#${secund.name}`}
+                      className={styles["list-item-link"]}
+                    >
+                      <ListItemIcon>
+                        <span className={styles["list-item-icon"]}>
+                          {getEmoji(secund.emoji)}
+                        </span>
+                      </ListItemIcon>
                       <ListItemText primary={secund.name} />
                     </Link>
                   </ListItemButton>
