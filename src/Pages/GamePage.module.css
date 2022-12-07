@@ -36,3 +36,40 @@
   margin-top: 15px !important;
   margin-bottom: 34px;
 }
+
+@media screen and (min-width: 600px) {
+  .pages-logo {
+    width: 480px;
+  }
+
+  .pages-subtitle {
+    margin-top: -70px;
+  }
+
+  .pages-subtitle p {
+    font-size: 1.3rem;
+    width: 480px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .pages-logo {
+    margin-top: 185px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .pages-logo {
+    width: 860px;
+  }
+
+  .pages-subtitle {
+    margin-top: -129px;
+  }
+
+  .pages-subtitle p {
+    font-size: 1.3rem;
+    width: 580px;
+  }
+}
