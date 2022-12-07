@@ -59,6 +59,10 @@
     margin-left: 2rem;
   }
 
+  .list-item-icon {
+    margin-top: -2px;
+  }
+
   .list-item span {
     font-size: 1.25rem;
   }
