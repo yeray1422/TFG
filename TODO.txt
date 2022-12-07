@@ -1,3 +1,2 @@
-revisar y hacer estilos de todos los componentes de las paginas de juego y mapa
 hacer imagenes de proximamente
 logos
