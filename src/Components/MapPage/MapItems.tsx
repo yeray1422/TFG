@@ -73,6 +73,7 @@ const MapItems = (props: MapItemsProps) => {
                   <MapItemTemplate
                     piece={key}
                     locationsObject={Object.values(values[index])}
+                    keysLength={keys.length}
                   />
                 </Grid>
               );

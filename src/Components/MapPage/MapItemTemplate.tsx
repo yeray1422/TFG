@@ -11,11 +11,12 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-import styles from "./MapItemTemplate.module.css";
+import stls from "./MapItemTemplate.module.css";
 
 interface MapItemProps {
   piece: string;
   locationsObject: Record<string, string>[];
+  keysLength: number;
 }
 
 const MapItemTemplate = (props: MapItemProps) => {
@@ -38,14 +39,24 @@ const MapItemTemplate = (props: MapItemProps) => {
     }
   };
 
+  const getImgSize = () => {
+    if (props.keysLength === 1) {
+      return "item-image-1";
+    }
+    if (props.keysLength % 2 === 0) {
+      return "item-image-2";
+    }
+    return "item-image-3";
+  };
+
   return (
-    <Card className={styles["map-item-card"]}>
-      <CardMedia component="div" className={styles["map-item-images"]}>
+    <Card className={stls["map-item-card"]}>
+      <CardMedia component="div" className={stls["map-item-images"]}>
         <div>
           <Tooltip title="Anterior" arrow>
             <IconButton
               onClick={handleLeftButtonClick}
-              className={styles["left-arrow"]}
+              className={stls["left-arrow"]}
               disabled={values.length <= 1}
             >
               <KeyboardArrowLeft />
@@ -56,14 +67,14 @@ const MapItemTemplate = (props: MapItemProps) => {
           <img
             src={values[selectedImage]["image"]}
             alt=""
-            className={styles["item-image"]}
+            className={`${stls["item-image"]} ${stls[getImgSize()]}`}
           />
         </div>
         <div>
           <Tooltip title="Siguiente" arrow>
             <IconButton
               onClick={handleRightButtonClick}
-              className={styles["right-arrow"]}
+              className={stls["right-arrow"]}
               disabled={values.length <= 1}
             >
               <KeyboardArrowRight />
@@ -72,7 +83,7 @@ const MapItemTemplate = (props: MapItemProps) => {
         </div>
       </CardMedia>
       <CardContent>
-        <Divider variant="middle" sx={{ mt: "5px" }} />
+        <Divider variant="middle" className={stls.divider} />
         <CardHeader title={props.piece} />
         <Typography variant="body2" color="text.secondary" textAlign="justify">
           {values[selectedImage]["description"]}
