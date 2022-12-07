@@ -4,6 +4,7 @@ import {
   CardHeader,
   Collapse,
   Divider,
+  Grid,
   IconButton,
   Tooltip,
   Typography,
@@ -29,6 +30,16 @@ const MapItems = (props: MapItemsProps) => {
     setOpenCard(!openCard);
   };
 
+  const getGrid = () => {
+    if (keys.length === 1) {
+      return { xs: 1, sm: 1, md: 1 };
+    }
+    if (keys.length % 2 === 0) {
+      return { xs: 1, sm: 2, md: 2 };
+    }
+    return { xs: 1, sm: 2, md: 3 }
+  };
+
   return (
     <div>
       <Card className={styles.card}>
@@ -39,9 +50,9 @@ const MapItems = (props: MapItemsProps) => {
         >
           <CardHeader id={props.item.name} title={props.item.name} />
           <Tooltip title={openCard ? "Ocultar" : "Expandir"} arrow>
-          <IconButton onClick={openCardHandler}>
-            {openCard ? <ExpandLess /> : <ExpandMore />}
-          </IconButton>
+            <IconButton onClick={openCardHandler}>
+              {openCard ? <ExpandLess /> : <ExpandMore />}
+            </IconButton>
           </Tooltip>
         </Stack>
         <Divider variant="middle" />
@@ -55,15 +66,18 @@ const MapItems = (props: MapItemsProps) => {
           </Typography>
         </CardContent>
         <Collapse in={openCard}>
-          {keys.map((key, index) => (
-            <React.Fragment key={`${props.item.id}:${index}`}>
-              <MapItemTemplate
-                piece={key}
-                locationsObject={Object.values(values[index])}
-              />
-              <Divider variant="middle" />
-            </React.Fragment>
-          ))}
+          <Grid container columns={getGrid()} columnSpacing={1} rowSpacing={2}>
+            {keys.map((key, index) => {
+              return (
+                <Grid item xs={1} key={`${props.item.id}:${index}`}>
+                  <MapItemTemplate
+                    piece={key}
+                    locationsObject={Object.values(values[index])}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
         </Collapse>
       </Card>
     </div>
