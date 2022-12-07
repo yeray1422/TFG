@@ -1,4 +1,14 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Collapse, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Collapse,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageItem from "../../Models/PageItem";
@@ -19,13 +29,15 @@ const PageItemTemplate = (props: PageItemProps) => {
 
   const renderDescription = () => {
     if (props.pageItem.description) {
-      return <Collapse in={expanded}>
-        <CardContent className="page-item-content">
-          <Typography variant="body2" color="text.secondary">
-            {props.pageItem.description}
-          </Typography>
-        </CardContent>
-      </Collapse>;
+      return (
+        <Collapse in={expanded}>
+          <CardContent className="page-item-content">
+            <Typography variant="body2" color="text.secondary">
+              {props.pageItem.description}
+            </Typography>
+          </CardContent>
+        </Collapse>
+      );
     }
   };
 
@@ -37,9 +49,9 @@ const PageItemTemplate = (props: PageItemProps) => {
             {!expanded ? "Mostrar Descripción" : "Ocultar Descripción"}
           </Button>
         </CardActions>
-      )
+      );
     }
-  }
+  };
 
   return (
     <Card className="page-item">
