@@ -32,12 +32,12 @@ const MapItems = (props: MapItemsProps) => {
 
   const getGrid = () => {
     if (keys.length === 1) {
-      return { xs: 1, sm: 1, md: 1 };
+      return { xs: 1, md: 1, lg: 1 };
     }
     if (keys.length % 2 === 0) {
-      return { xs: 1, sm: 2, md: 2 };
+      return { xs: 1, md: 2, lg: 2 };
     }
-    return { xs: 1, sm: 2, md: 3 }
+    return { xs: 1, md: 2, lg: 3 }
   };
 
   return (
