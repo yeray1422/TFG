@@ -35,19 +35,21 @@
   }
 }
 
-@media screen and (min-width: 900px) {
-  .item-image {
-    width: 330px;
-  }
-}
 
 @media screen and (min-width: 900px) {
   .item-image {
     width: 330px;
+  }
+  .item-image-1 {
+    width: 725px;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .item-image-1 {
+    width: 1000px;
+  }
+
   .item-image-2 {
     width: 450px;
   }
