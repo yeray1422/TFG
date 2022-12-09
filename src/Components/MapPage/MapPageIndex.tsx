@@ -38,7 +38,9 @@ const MapPageIndex = (props: MapPageItemsProps) => {
 
   return (
     <List className={styles.list}>
-      <ListSubheader component="h2" className={styles["list-title"]}>ÍNDICE</ListSubheader>
+      <ListSubheader component="h2" className={styles["list-title"]}>
+        ÍNDICE
+      </ListSubheader>
       {construibles.length > 0 && (
         <>
           <ListItemButton
@@ -62,17 +64,14 @@ const MapPageIndex = (props: MapPageItemsProps) => {
             </p>
             <List component="div">
               {construibles.map((construible) => (
-                <Tooltip
-                  title={`Ir a ${construible.name}`}
-                  arrow
+                <Link
+                  href={`#${construible.name}`}
+                  className={styles["list-item-link"]}
                   key={construible.id}
                 >
-                  <ListItemButton
-                    className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
-                  >
-                    <Link
-                      href={`#${construible.name}`}
-                      className={styles["list-item-link"]}
+                  <Tooltip title={`Ir a ${construible.name}`} arrow>
+                    <ListItemButton
+                      className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
                     >
                       <ListItemIcon>
                         <span className={styles["list-item-icon"]}>
@@ -80,9 +79,9 @@ const MapPageIndex = (props: MapPageItemsProps) => {
                         </span>
                       </ListItemIcon>
                       <ListItemText primary={construible.name} />
-                    </Link>
-                  </ListItemButton>
-                </Tooltip>
+                    </ListItemButton>
+                  </Tooltip>
+                </Link>
               ))}
             </List>
           </Collapse>
@@ -107,13 +106,14 @@ const MapPageIndex = (props: MapPageItemsProps) => {
           <Collapse in={openEasterEgg}>
             <List component="div">
               {easterEgg.map((step) => (
-                <Tooltip title={`Ir a ${step.name}`} arrow key={step.id}>
-                  <ListItemButton
-                    className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
-                  >
-                    <Link
-                      href={`#${step.name}`}
-                      className={styles["list-item-link"]}
+                <Link
+                  href={`#${step.name}`}
+                  className={styles["list-item-link"]}
+                  key={step.id}
+                >
+                  <Tooltip title={`Ir a ${step.name}`} arrow>
+                    <ListItemButton
+                      className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
                     >
                       <ListItemIcon>
                         <span className={styles["list-item-icon"]}>
@@ -121,9 +121,9 @@ const MapPageIndex = (props: MapPageItemsProps) => {
                         </span>
                       </ListItemIcon>
                       <ListItemText primary={step.name} />
-                    </Link>
-                  </ListItemButton>
-                </Tooltip>
+                    </ListItemButton>
+                  </Tooltip>
+                </Link>
               ))}
             </List>
           </Collapse>
@@ -148,13 +148,14 @@ const MapPageIndex = (props: MapPageItemsProps) => {
           <Collapse in={openEasterEgg2}>
             <List component="div">
               {easterEgg2.map((secund) => (
-                <Tooltip title={`Ir a ${secund.name}`} arrow key={secund.id}>
-                  <ListItemButton
-                    className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
-                  >
-                    <Link
-                      href={`#${secund.name}`}
-                      className={styles["list-item-link"]}
+                <Link
+                  href={`#${secund.name}`}
+                  className={styles["list-item-link"]}
+                  key={secund.id}
+                >
+                  <Tooltip title={`Ir a ${secund.name}`} arrow>
+                    <ListItemButton
+                      className={`${styles["list-item"]} ${styles["inner-list-item"]}`}
                     >
                       <ListItemIcon>
                         <span className={styles["list-item-icon"]}>
@@ -162,9 +163,9 @@ const MapPageIndex = (props: MapPageItemsProps) => {
                         </span>
                       </ListItemIcon>
                       <ListItemText primary={secund.name} />
-                    </Link>
-                  </ListItemButton>
-                </Tooltip>
+                    </ListItemButton>
+                  </Tooltip>
+                </Link>
               ))}
             </List>
           </Collapse>
