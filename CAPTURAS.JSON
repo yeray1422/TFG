@@ -9,23 +9,25 @@
       },
       "Pieza 3": {
         "Localización 1": "Mejor cerca huevera"
-      },
-      "Escudo": "Construido"
-    },
-    "Espada": {
-      "Simbolos": {
-        "Rutas": ["Footlight"]
       }
     },
     "Protector Civil": {
       "Fusible 1": {
-        "Fusible ya recogido": ["Puerta cabaña, Frente escaleras tren"]
+        "Fusible ya recogido": ["Puerta cabaña", "Frente escaleras tren"]
       },
       "Fusible 2": {
-        "Fusible ya recogido": ["Cajas cerca perk, Carro plátanos"]
+        "Fusible ya recogido": [
+          "Cajas cerca perk",
+          "Carro plátanos",
+          "Barriles inicio puente"
+        ]
       },
       "Fusible 3": {
-        "Fusible ya recogido": ["Barril cerca perk, Bajo cartel teatro"]
+        "Fusible ya recogido": [
+          "Barril cerca perk",
+          "Bajo cartel teatro",
+          "Medio puente"
+        ]
       },
       "Zonas de activación": {
         "Localizaciones ya hechas": ["Huevera Jessica", "Medio"]
@@ -35,31 +37,22 @@
       "Fumigadores": {
         "Localizaciones ya hechas": {
           "Inicio": ["Camión", "Caja", "Pared"],
-          "Medio": [],
+          "Medio": ["Frente Krm"],
           "Canals": ["Chicles"],
-          "Waterfront": [],
+          "Waterfront": ["Entrada Waterfront"],
           "Footlight": []
         }
       }
     }
   },
   "Easter Egg": {
-    "Rituales": {
-      "PaP": ["GIF Colocación de objetos", "PaP"]
-    },
     "Mejora Espada": {
-      "Recogida": ["Nero", "Jessica", "Jack"],
-      "Entrega": ["Nero", "Jessica", "Jack"]
-    },
-    "Bandera": {
-      "Ruta Jessica": ["Mesa"],
-      "Ruta Floyd": ["Zona 1", "Mesa"],
-      "Ruta Jack": ["Zona 1", "Zona 2", "Mesa"]
+      "Recogida": ["Nero", "Jack"],
+      "Entrega": ["Nero", "Jack"]
     },
     "Electrificar vias": {
-      "Cajas": ["Canals", "Waterfront", "Footlight"]
-    },
-    "Electrificar Guardianes": "Gif"
+      "Cajas": ["Footlight"]
+    }
   },
   "Easter Egg Secundarios": {}
 }
