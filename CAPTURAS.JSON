@@ -6,9 +6,6 @@
       },
       "Pieza 2": {
         "Localización 3": "Puente"
-      },
-      "Pieza 3": {
-        "Localización 1": "Mejor cerca huevera"
       }
     },
     "Protector Civil": {
@@ -37,7 +34,7 @@
       "Fumigadores": {
         "Localizaciones ya hechas": {
           "Inicio": ["Camión", "Caja", "Pared"],
-          "Medio": ["Frente Krm"],
+          "Medio": ["Frente Krm", "Canals"],
           "Canals": ["Chicles"],
           "Waterfront": ["Entrada Waterfront"],
           "Footlight": []
@@ -47,11 +44,8 @@
   },
   "Easter Egg": {
     "Mejora Espada": {
-      "Recogida": ["Nero", "Jack"],
-      "Entrega": ["Nero", "Jack"]
-    },
-    "Electrificar vias": {
-      "Cajas": ["Footlight"]
+      "Recogida": ["Nero"],
+      "Entrega": ["Nero"]
     }
   },
   "Easter Egg Secundarios": {}
