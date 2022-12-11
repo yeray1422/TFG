@@ -1,13 +1,5 @@
 {
   "Construibles": {
-    "Escudo": {
-      "Pieza 1": {
-        "Localización 2": "Frente a perk"
-      },
-      "Pieza 2": {
-        "Localización 3": "Puente"
-      }
-    },
     "Protector Civil": {
       "Fusible 1": {
         "Fusible ya recogido": ["Puerta cabaña", "Frente escaleras tren"]
@@ -25,9 +17,6 @@
           "Bajo cartel teatro",
           "Medio puente"
         ]
-      },
-      "Zonas de activación": {
-        "Localizaciones ya hechas": ["Huevera Jessica", "Medio"]
       }
     },
     "Siervo de apoticón": {
@@ -42,11 +31,6 @@
       }
     }
   },
-  "Easter Egg": {
-    "Mejora Espada": {
-      "Recogida": ["Nero"],
-      "Entrega": ["Nero"]
-    }
-  },
+  "Easter Egg": {},
   "Easter Egg Secundarios": {}
 }
